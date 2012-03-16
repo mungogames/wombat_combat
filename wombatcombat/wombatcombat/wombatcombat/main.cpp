@@ -12,6 +12,7 @@ int main (int argc, const char * argv[])
   
   string gameName = "Wombat Combat";
   
+
   bool fullscreen = false;
   
   // Create the main window
