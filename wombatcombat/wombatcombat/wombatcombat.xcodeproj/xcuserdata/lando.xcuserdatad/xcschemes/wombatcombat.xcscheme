@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5E43087C1513A3EE001187C6"
+               BlueprintIdentifier = "5E4308B11513AF72001187C6"
                BuildableName = "wombatcombat.app"
                BlueprintName = "wombatcombat"
                ReferencedContainer = "container:wombatcombat.xcodeproj">
@@ -38,7 +38,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5E43087C1513A3EE001187C6"
+            BlueprintIdentifier = "5E4308B11513AF72001187C6"
             BuildableName = "wombatcombat.app"
             BlueprintName = "wombatcombat"
             ReferencedContainer = "container:wombatcombat.xcodeproj">
@@ -55,7 +55,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5E43087C1513A3EE001187C6"
+            BlueprintIdentifier = "5E4308B11513AF72001187C6"
             BuildableName = "wombatcombat.app"
             BlueprintName = "wombatcombat"
             ReferencedContainer = "container:wombatcombat.xcodeproj">

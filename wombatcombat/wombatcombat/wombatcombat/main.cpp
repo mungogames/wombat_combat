@@ -10,53 +10,53 @@ int main (int argc, const char * argv[])
 
   // Load a sprite to display
   sf::Texture texture;
-  if (!texture.LoadFromFile(ResourcePath() + "cute_image.jpg"))
+  if (!texture.loadFromFile(resourcePath() + "cute_image.jpg"))
   	return EXIT_FAILURE;
   sf::Sprite sprite(texture);
 
   // Create a graphical text to display
   sf::Font font;
-  if (!font.LoadFromFile(ResourcePath() + "sansation.ttf"))
+  if (!font.loadFromFile(resourcePath() + "sansation.ttf"))
   	return EXIT_FAILURE;
   sf::Text text("Hello SFML", font, 50);
-  text.SetColor(sf::Color::Black);
+  text.setColor(sf::Color::Black);
 
   // Load a music to play
   sf::Music music;
-  if (!music.OpenFromFile(ResourcePath() + "nice_music.ogg"))
+  if (!music.openFromFile(resourcePath() + "nice_music.ogg"))
   	return EXIT_FAILURE;
 
   // Play the music
-  music.Play();
+  music.play();
       
 
   // Start the game loop
-  while (window.IsOpen())
+  while (window.isOpen())
   {
   	// Process events
   	sf::Event event;
-  	while (window.PollEvent(event))
+  	while (window.pollEvent(event))
   	{
   		// Close window : exit
-  		if (event.Type == sf::Event::Closed)
-  			window.Close();
+  		if (event.type == sf::Event::Closed)
+  			window.close();
           
   		// Escape pressed : exit
-  		if (event.Type == sf::Event::KeyPressed && event.Key.Code == sf::Keyboard::Escape)
-  			window.Close();
+  		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
+  			window.close();
   	}
 
   	// Clear screen
-  	window.Clear();
+  	window.clear();
   	
   	// Draw the sprite
-  	window.Draw(sprite);
+  	window.draw(sprite);
   	
   	// Draw the string
-  	window.Draw(text);
+  	window.draw(text);
 
   	// Update the window
-  	window.Display();
+  	window.display();
   }
 
 	return EXIT_SUCCESS;
