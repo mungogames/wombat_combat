@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		5E4308B71513AF72001187C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4308B61513AF72001187C6 /* Foundation.framework */; };
 		5E4308BA1513AF72001187C6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E4308B91513AF72001187C6 /* main.cpp */; };
-		5E4308BC1513AF72001187C6 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E4308BB1513AF72001187C6 /* ResourcePath.mm */; };
-		5E4308C01513AF72001187C6 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E4308BF1513AF72001187C6 /* sansation.ttf */; };
-		5E4308C21513AF72001187C6 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E4308C11513AF72001187C6 /* cute_image.jpg */; };
-		5E4308C41513AF72001187C6 /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 5E4308C31513AF72001187C6 /* nice_music.ogg */; };
 		5E4308C91513AF72001187C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E4308C71513AF72001187C6 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +16,6 @@
 		5E4308B21513AF72001187C6 /* wombatcombat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wombatcombat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4308B61513AF72001187C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E4308B91513AF72001187C6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		5E4308BB1513AF72001187C6 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
-		5E4308BD1513AF72001187C6 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
-		5E4308BF1513AF72001187C6 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
-		5E4308C11513AF72001187C6 /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		5E4308C31513AF72001187C6 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		5E4308C61513AF72001187C6 /* wombatcombat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wombatcombat-Info.plist"; sourceTree = "<group>"; };
 		5E4308C81513AF72001187C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,22 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				5E4308B91513AF72001187C6 /* main.cpp */,
-				5E4308BB1513AF72001187C6 /* ResourcePath.mm */,
-				5E4308BD1513AF72001187C6 /* ResourcePath.hpp */,
-				5E4308BE1513AF72001187C6 /* Resources */,
 				5E4308C51513AF72001187C6 /* Supporting Files */,
 			);
 			path = wombatcombat;
-			sourceTree = "<group>";
-		};
-		5E4308BE1513AF72001187C6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5E4308BF1513AF72001187C6 /* sansation.ttf */,
-				5E4308C11513AF72001187C6 /* cute_image.jpg */,
-				5E4308C31513AF72001187C6 /* nice_music.ogg */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		5E4308C51513AF72001187C6 /* Supporting Files */ = {
@@ -145,9 +123,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4308C01513AF72001187C6 /* sansation.ttf in Resources */,
-				5E4308C21513AF72001187C6 /* cute_image.jpg in Resources */,
-				5E4308C41513AF72001187C6 /* nice_music.ogg in Resources */,
 				5E4308C91513AF72001187C6 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4308BA1513AF72001187C6 /* main.cpp in Sources */,
-				5E4308BC1513AF72001187C6 /* ResourcePath.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,8 +266,14 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					/usr/local/includes,
+					"$(HEADER_SEARCH_PATHS)",
+				);
 				INFOPLIST_FILE = "wombatcombat/wombatcombat-Info.plist";
+				OBJROOT = "$(PROJECT_PATH)/build";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = "$(PROJECT_PATH)/build";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -304,8 +284,14 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					/usr/local/includes,
+					"$(HEADER_SEARCH_PATHS)",
+				);
 				INFOPLIST_FILE = "wombatcombat/wombatcombat-Info.plist";
+				OBJROOT = "$(PROJECT_PATH)/build";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = "$(PROJECT_PATH)/build";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -329,6 +315,7 @@
 				5E4308CE1513AF72001187C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
