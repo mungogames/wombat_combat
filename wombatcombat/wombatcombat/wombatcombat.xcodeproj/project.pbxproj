@@ -10,6 +10,7 @@
 		5E4308B71513AF72001187C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4308B61513AF72001187C6 /* Foundation.framework */; };
 		5E4308BA1513AF72001187C6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E4308B91513AF72001187C6 /* main.cpp */; };
 		5E4308C91513AF72001187C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E4308C71513AF72001187C6 /* InfoPlist.strings */; };
+		5E625E9A1513DCB00076984F /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E625E991513DCB00076984F /* libBox2D.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		5E4308B91513AF72001187C6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		5E4308C61513AF72001187C6 /* wombatcombat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wombatcombat-Info.plist"; sourceTree = "<group>"; };
 		5E4308C81513AF72001187C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5E625E991513DCB00076984F /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBox2D.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +28,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4308B71513AF72001187C6 /* Foundation.framework in Frameworks */,
+				5E625E9A1513DCB00076984F /* libBox2D.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,7 @@
 		5E4308B81513AF72001187C6 /* wombatcombat */ = {
 			isa = PBXGroup;
 			children = (
+				5E625E991513DCB00076984F /* libBox2D.a */,
 				5E4308B91513AF72001187C6 /* main.cpp */,
 				5E4308C51513AF72001187C6 /* Supporting Files */,
 			);
@@ -267,10 +271,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = (
-					/usr/local/includes,
+					/usr/local/include,
 					"$(HEADER_SEARCH_PATHS)",
 				);
 				INFOPLIST_FILE = "wombatcombat/wombatcombat-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/wombatcombat\"";
 				OBJROOT = "$(PROJECT_PATH)/build";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = "$(PROJECT_PATH)/build";
@@ -285,10 +290,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = (
-					/usr/local/includes,
+					/usr/local/include,
 					"$(HEADER_SEARCH_PATHS)",
 				);
 				INFOPLIST_FILE = "wombatcombat/wombatcombat-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/wombatcombat\"";
 				OBJROOT = "$(PROJECT_PATH)/build";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = "$(PROJECT_PATH)/build";
