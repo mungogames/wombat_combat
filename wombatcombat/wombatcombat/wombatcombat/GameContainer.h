@@ -1,9 +1,8 @@
-//
 //  GameContainer.h
 //  wombatcombat
 //
 //  Created by Simon Jentsch on 16.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MungoGames__. All rights reserved.
 //
 
 #ifndef wombatcombat_GameContainer_h

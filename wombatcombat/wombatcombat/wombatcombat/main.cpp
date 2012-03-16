@@ -30,11 +30,20 @@ int main (int argc, const char * argv[])
   
   GameContainer* gc = new GameContainer(window, world);
   
-  
-  Terrain* terrain = new Terrain(gc, 3, 0, 0);
-  terrain->addPoint(0, 40, 50);
-  terrain->addPoint(1, 50, 0);
-  terrain->addPoint(2, 90, 5);
+  /*klassisches Koordinatensystem
+   * linke Haelfte 196 Einheiten breit, obere haelfte 355 Einheiten hoch
+   * rechte Haelfte 204 Einheiten breit, unter haelfte 350 Einheiten hoch   *
+   */
+
+  Terrain* terrain = new Terrain(gc, 8, 0, 0);
+  terrain->addPoint(0,	-196,	-300);
+  terrain->addPoint(1,	-100,	-300);
+  terrain->addPoint(2,	-50,	-200);
+  terrain->addPoint(3,	50,		-200);
+  terrain->addPoint(4,	50,		-320);
+  terrain->addPoint(5,	150,	-320);
+  terrain->addPoint(6,	190,	-100);
+  terrain->addPoint(7,	204,	355);
   
   float windowRatio = (float)gc->getWindow()->getSize().x / (float)gc->getWindow()->getSize().y;
   gc->getWindow()->setView(sf::View(sf::Vector2f(4, -3), sf::Vector2f(400,400*windowRatio)));
