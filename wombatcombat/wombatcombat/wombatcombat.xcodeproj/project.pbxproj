@@ -7,74 +7,84 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E4308B71513AF72001187C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4308B61513AF72001187C6 /* Foundation.framework */; };
-		5E4308BA1513AF72001187C6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E4308B91513AF72001187C6 /* main.cpp */; };
-		5E4308C91513AF72001187C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E4308C71513AF72001187C6 /* InfoPlist.strings */; };
-		5E625E9A1513DCB00076984F /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E625E991513DCB00076984F /* libBox2D.a */; };
+		5E625EB81513E7BE0076984F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E625EB71513E7BE0076984F /* Foundation.framework */; };
+		5E625EBB1513E7BE0076984F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E625EBA1513E7BE0076984F /* main.cpp */; };
+		5E625ECA1513E7BE0076984F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E625EC81513E7BE0076984F /* InfoPlist.strings */; };
+		5E625EDA1513E7EE0076984F /* GameContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E625ED51513E7EE0076984F /* GameContainer.cpp */; };
+		5E625EDB1513E7EE0076984F /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E625ED71513E7EE0076984F /* libBox2D.a */; };
+		5E625EDC1513E7EE0076984F /* Terrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E625ED81513E7EE0076984F /* Terrain.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5E4308B21513AF72001187C6 /* wombatcombat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wombatcombat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E4308B61513AF72001187C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		5E4308B91513AF72001187C6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		5E4308C61513AF72001187C6 /* wombatcombat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wombatcombat-Info.plist"; sourceTree = "<group>"; };
-		5E4308C81513AF72001187C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5E625E991513DCB00076984F /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBox2D.a; sourceTree = "<group>"; };
+		5E625EB31513E7BE0076984F /* wombatcombat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wombatcombat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E625EB71513E7BE0076984F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5E625EBA1513E7BE0076984F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5E625EC71513E7BE0076984F /* wombatcombat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wombatcombat-Info.plist"; sourceTree = "<group>"; };
+		5E625EC91513E7BE0076984F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5E625ED51513E7EE0076984F /* GameContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameContainer.cpp; sourceTree = "<group>"; };
+		5E625ED61513E7EE0076984F /* GameContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameContainer.h; sourceTree = "<group>"; };
+		5E625ED71513E7EE0076984F /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBox2D.a; sourceTree = "<group>"; };
+		5E625ED81513E7EE0076984F /* Terrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Terrain.cpp; sourceTree = "<group>"; };
+		5E625ED91513E7EE0076984F /* Terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5E4308AF1513AF72001187C6 /* Frameworks */ = {
+		5E625EB01513E7BE0076984F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4308B71513AF72001187C6 /* Foundation.framework in Frameworks */,
-				5E625E9A1513DCB00076984F /* libBox2D.a in Frameworks */,
+				5E625EB81513E7BE0076984F /* Foundation.framework in Frameworks */,
+				5E625EDB1513E7EE0076984F /* libBox2D.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E4308A61513AF72001187C6 = {
+		5E625EA71513E7BE0076984F = {
 			isa = PBXGroup;
 			children = (
-				5E4308B81513AF72001187C6 /* wombatcombat */,
-				5E4308B51513AF72001187C6 /* Frameworks */,
-				5E4308B31513AF72001187C6 /* Products */,
+				5E625EB91513E7BE0076984F /* wombatcombat */,
+				5E625EB61513E7BE0076984F /* Frameworks */,
+				5E625EB41513E7BE0076984F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5E4308B31513AF72001187C6 /* Products */ = {
+		5E625EB41513E7BE0076984F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E4308B21513AF72001187C6 /* wombatcombat.app */,
+				5E625EB31513E7BE0076984F /* wombatcombat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5E4308B51513AF72001187C6 /* Frameworks */ = {
+		5E625EB61513E7BE0076984F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E4308B61513AF72001187C6 /* Foundation.framework */,
+				5E625EB71513E7BE0076984F /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5E4308B81513AF72001187C6 /* wombatcombat */ = {
+		5E625EB91513E7BE0076984F /* wombatcombat */ = {
 			isa = PBXGroup;
 			children = (
-				5E625E991513DCB00076984F /* libBox2D.a */,
-				5E4308B91513AF72001187C6 /* main.cpp */,
-				5E4308C51513AF72001187C6 /* Supporting Files */,
+				5E625ED51513E7EE0076984F /* GameContainer.cpp */,
+				5E625ED61513E7EE0076984F /* GameContainer.h */,
+				5E625ED71513E7EE0076984F /* libBox2D.a */,
+				5E625ED81513E7EE0076984F /* Terrain.cpp */,
+				5E625ED91513E7EE0076984F /* Terrain.h */,
+				5E625EBA1513E7BE0076984F /* main.cpp */,
+				5E625EC61513E7BE0076984F /* Supporting Files */,
 			);
 			path = wombatcombat;
 			sourceTree = "<group>";
 		};
-		5E4308C51513AF72001187C6 /* Supporting Files */ = {
+		5E625EC61513E7BE0076984F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E4308C61513AF72001187C6 /* wombatcombat-Info.plist */,
-				5E4308C71513AF72001187C6 /* InfoPlist.strings */,
+				5E625EC71513E7BE0076984F /* wombatcombat-Info.plist */,
+				5E625EC81513E7BE0076984F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -82,14 +92,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5E4308B11513AF72001187C6 /* wombatcombat */ = {
+		5E625EB21513E7BE0076984F /* wombatcombat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5E4308CC1513AF72001187C6 /* Build configuration list for PBXNativeTarget "wombatcombat" */;
+			buildConfigurationList = 5E625ECD1513E7BE0076984F /* Build configuration list for PBXNativeTarget "wombatcombat" */;
 			buildPhases = (
-				5E4308AD1513AF72001187C6 /* ShellScript */,
-				5E4308AE1513AF72001187C6 /* Sources */,
-				5E4308AF1513AF72001187C6 /* Frameworks */,
-				5E4308B01513AF72001187C6 /* Resources */,
+				5E625EAE1513E7BE0076984F /* ShellScript */,
+				5E625EAF1513E7BE0076984F /* Sources */,
+				5E625EB01513E7BE0076984F /* Frameworks */,
+				5E625EB11513E7BE0076984F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -97,44 +107,44 @@
 			);
 			name = wombatcombat;
 			productName = wombatcombat;
-			productReference = 5E4308B21513AF72001187C6 /* wombatcombat.app */;
+			productReference = 5E625EB31513E7BE0076984F /* wombatcombat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5E4308A81513AF72001187C6 /* Project object */ = {
+		5E625EA91513E7BE0076984F /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 5E4308AB1513AF72001187C6 /* Build configuration list for PBXProject "wombatcombat" */;
+			buildConfigurationList = 5E625EAC1513E7BE0076984F /* Build configuration list for PBXProject "wombatcombat" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 5E4308A61513AF72001187C6;
-			productRefGroup = 5E4308B31513AF72001187C6 /* Products */;
+			mainGroup = 5E625EA71513E7BE0076984F;
+			productRefGroup = 5E625EB41513E7BE0076984F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5E4308B11513AF72001187C6 /* wombatcombat */,
+				5E625EB21513E7BE0076984F /* wombatcombat */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		5E4308B01513AF72001187C6 /* Resources */ = {
+		5E625EB11513E7BE0076984F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4308C91513AF72001187C6 /* InfoPlist.strings in Resources */,
+				5E625ECA1513E7BE0076984F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5E4308AD1513AF72001187C6 /* ShellScript */ = {
+		5E625EAE1513E7BE0076984F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -150,21 +160,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5E4308AE1513AF72001187C6 /* Sources */ = {
+		5E625EAF1513E7BE0076984F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4308BA1513AF72001187C6 /* main.cpp in Sources */,
+				5E625EBB1513E7BE0076984F /* main.cpp in Sources */,
+				5E625EDA1513E7EE0076984F /* GameContainer.cpp in Sources */,
+				5E625EDC1513E7EE0076984F /* Terrain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5E4308C71513AF72001187C6 /* InfoPlist.strings */ = {
+		5E625EC81513E7BE0076984F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5E4308C81513AF72001187C6 /* en */,
+				5E625EC91513E7BE0076984F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -172,7 +184,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		5E4308CA1513AF72001187C6 /* Debug */ = {
+		5E625ECB1513E7BE0076984F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -221,7 +233,7 @@
 			};
 			name = Debug;
 		};
-		5E4308CB1513AF72001187C6 /* Release */ = {
+		5E625ECC1513E7BE0076984F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -263,7 +275,7 @@
 			};
 			name = Release;
 		};
-		5E4308CD1513AF72001187C6 /* Debug */ = {
+		5E625ECE1513E7BE0076984F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
@@ -275,15 +287,16 @@
 					"$(HEADER_SEARCH_PATHS)",
 				);
 				INFOPLIST_FILE = "wombatcombat/wombatcombat-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/wombatcombat\"";
-				OBJROOT = "$(PROJECT_PATH)/build";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/wombatcombat\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYMROOT = "$(PROJECT_PATH)/build";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		5E4308CE1513AF72001187C6 /* Release */ = {
+		5E625ECF1513E7BE0076984F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
@@ -294,10 +307,11 @@
 					"$(HEADER_SEARCH_PATHS)",
 				);
 				INFOPLIST_FILE = "wombatcombat/wombatcombat-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/wombatcombat\"";
-				OBJROOT = "$(PROJECT_PATH)/build";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/wombatcombat\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYMROOT = "$(PROJECT_PATH)/build";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -305,25 +319,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5E4308AB1513AF72001187C6 /* Build configuration list for PBXProject "wombatcombat" */ = {
+		5E625EAC1513E7BE0076984F /* Build configuration list for PBXProject "wombatcombat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E4308CA1513AF72001187C6 /* Debug */,
-				5E4308CB1513AF72001187C6 /* Release */,
+				5E625ECB1513E7BE0076984F /* Debug */,
+				5E625ECC1513E7BE0076984F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5E4308CC1513AF72001187C6 /* Build configuration list for PBXNativeTarget "wombatcombat" */ = {
+		5E625ECD1513E7BE0076984F /* Build configuration list for PBXNativeTarget "wombatcombat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E4308CD1513AF72001187C6 /* Debug */,
-				5E4308CE1513AF72001187C6 /* Release */,
+				5E625ECE1513E7BE0076984F /* Debug */,
+				5E625ECF1513E7BE0076984F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5E4308A81513AF72001187C6 /* Project object */;
+	rootObject = 5E625EA91513E7BE0076984F /* Project object */;
 }
