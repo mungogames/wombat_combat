@@ -37,7 +37,6 @@ void BaseGame::update()
 {
   
   this->player->update(gc);
-  this->rock1->
   this->camera->update();  
   
 }
