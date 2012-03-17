@@ -26,18 +26,18 @@ BaseGame::BaseGame(GameContainer* gc)
 		this->terrain->addPoint(5, 200, 45);
 		this->terrain->addPoint(6, 250, 55);
 
-  	this->rock1 = new DynBox(gc, 4, 62,20);
+  	this->rock1 = new DynOrb(gc, 4, 62,20);
   		this->rock1->addPoint(0,3,-1);
   		this->rock1->addPoint(1,0,0);
   		this->rock1->addPoint(2,0,-6);
   		this->rock1->addPoint(3,4,-6);
 
-  	this->rock2 = new DynBox(gc, 3, 55, 40);
+  	this->rock2 = new DynOrb(gc, 3, 55, 40);
   		this->rock2->addPoint(0,0,0);
   		this->rock2->addPoint(1,-2,-3);
   		this->rock2->addPoint(2,2,-3);
 
-  	this->boulder = new DynBox(gc, 8, 105, 20);
+  	this->boulder = new DynOrb(gc, 8, 105, 20);
   		this->boulder->addPoint(0,0,0);
   		this->boulder->addPoint(1,-2,0);
   		this->boulder->addPoint(2,-3,-1);
@@ -46,9 +46,6 @@ BaseGame::BaseGame(GameContainer* gc)
   		this->boulder->addPoint(5,0,-4);
   		this->boulder->addPoint(6,1,-3);
   		this->boulder->addPoint(7,1,-1);
-
-
-
 
   	this->terrain->generate();
   	this->rock1->generate();
