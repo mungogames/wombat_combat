@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-#include <Box2d/Box2d.h>
+#include <Box2D/Box2D.h>
 #include "BaseGame.h"
 #include "ControlHandler.h"
 #include "GameContainer.h"
@@ -24,7 +24,6 @@ int main (int argc, const char * argv[])
   b2Vec2 gravity(0, -3);
   b2World* world = new b2World(gravity);
   
-<<<<<<< HEAD
   ContactListener contactListener;
   world->SetContactListener(&contactListener);
   
@@ -32,23 +31,7 @@ int main (int argc, const char * argv[])
   float32 timeStep = 1.0f / 60.0f;
   int32 velocityIterations = 8; 
   int32 positionIterations = 4;
-=======
-  /*klassisches Koordinatensystem
-   * linke Haelfte 196 Einheiten breit, obere haelfte 355 Einheiten hoch
-   * rechte Haelfte 204 Einheiten breit, unter haelfte 350 Einheiten hoch   *
-   */
 
-  Terrain* terrain = new Terrain(gc, 8, 0, 0);
-  terrain->addPoint(0,	-196,	-300);
-  terrain->addPoint(1,	-100,	-300);
-  terrain->addPoint(2,	-50,	-200);
-  terrain->addPoint(3,	50,		-200);
-  terrain->addPoint(4,	50,		-320);
-  terrain->addPoint(5,	150,	-320);
-  terrain->addPoint(6,	190,	-100);
-  terrain->addPoint(7,	204,	355);
->>>>>>> f4a87bb8b211a6502d4ca2d00cadaa76c9463789
-  
   GameContainer* gc = new GameContainer(window, world);
   
   // Create the main window

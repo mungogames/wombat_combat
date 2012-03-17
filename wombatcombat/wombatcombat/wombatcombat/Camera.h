@@ -12,7 +12,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-#include <Box2d/Box2d.h>
+#include <Box2D/Box2D.h>
 #include "GameContainer.h"
 #include "Player.h"
 
