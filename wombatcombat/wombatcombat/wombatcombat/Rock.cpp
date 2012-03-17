@@ -14,6 +14,7 @@ Rock::Rock (GameContainer* gc, int pointCount, float posX, float posY)
 	//Definitionen für Box2D
 	//Body Definition
 	this->bodyDef = new b2BodyDef();
+	this->bodyDef->type = b2_dynamicBody;
 	this->bodyDef->position.Set(posX, posY);
 	//Create Body in World
 	this->body = gc->getWorld()->CreateBody(this->bodyDef);
@@ -24,20 +25,20 @@ Rock::Rock (GameContainer* gc, int pointCount, float posX, float posY)
 	this->renderVertices.resize(this->pointCount);
 }
 
-void Terrain::addPoint(int index, float x, float y)
+void Rock::addPoint(int index, float x, float y)
 {
 	this->chainVertices[index].Set(x, y);
 	this->renderVertices[index] = sf::Vector2f(x, -y);
 }
 
-void Terrain::generate()
+void Rock::generate()
 {
-	this->chain = new b2ChainShape();
-	this->chain->CreateChain(this->chainVertices, this->pointCount);
-	this->body->CreateFixture(this->chain, 0);
+	this->polyRock = new b2PolygonShape();
+	this->polyRock->Set(this->chainVertices, this->pointCount);
+	this->body->CreateFixture(this->polyRock, 0);
 }
 
-void Terrain::render(GameContainer*gc)
+void Rock::render(GameContainer*gc)
 {
 	gc->getWindow()->draw(this->renderVertices);
 }
