@@ -20,7 +20,7 @@
 		5E87358E1514A48600AF6142 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E87358D1514A48600AF6142 /* Camera.cpp */; };
 		5E8735931514A4A900AF6142 /* ControlHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735911514A4A900AF6142 /* ControlHandler.cpp */; };
 		5E8735961514A4B800AF6142 /* BaseGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735941514A4B800AF6142 /* BaseGame.cpp */; };
-		5E8DE2021514C8BB007CBCCA /* Rock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8DE2001514C8BB007CBCCA /* Rock.cpp */; };
+		5EA391D71514FD8900143E3F /* DynBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EA391D51514FD8900143E3F /* DynBox.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +50,8 @@
 		5E8735941514A4B800AF6142 /* BaseGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseGame.cpp; sourceTree = "<group>"; };
 		5E8735951514A4B800AF6142 /* BaseGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGame.h; sourceTree = "<group>"; };
 		5E8735981514A50000AF6142 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
-		5E8DE2001514C8BB007CBCCA /* Rock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rock.cpp; sourceTree = "<group>"; };
-		5E8DE2011514C8BB007CBCCA /* Rock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rock.h; sourceTree = "<group>"; };
+		5EA391D51514FD8900143E3F /* DynBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DynBox.cpp; sourceTree = "<group>"; };
+		5EA391D61514FD8900143E3F /* DynBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynBox.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +139,8 @@
 				5E625ED81513E7EE0076984F /* Terrain.cpp */,
 				5E625ED91513E7EE0076984F /* Terrain.h */,
 				5E87357C151496B200AF6142 /* Player.h */,
-				5E8DE2001514C8BB007CBCCA /* Rock.cpp */,
-				5E8DE2011514C8BB007CBCCA /* Rock.h */,
+				5EA391D51514FD8900143E3F /* DynBox.cpp */,
+				5EA391D61514FD8900143E3F /* DynBox.h */,
 				5E8735811514972900AF6142 /* Creature.h */,
 				5E8735821514972E00AF6142 /* Creature.cpp */,
 				5E87357E151496BA00AF6142 /* Player.cpp */,
@@ -250,7 +250,7 @@
 				5E87358E1514A48600AF6142 /* Camera.cpp in Sources */,
 				5E8735931514A4A900AF6142 /* ControlHandler.cpp in Sources */,
 				5E8735961514A4B800AF6142 /* BaseGame.cpp in Sources */,
-				5E8DE2021514C8BB007CBCCA /* Rock.cpp in Sources */,
+				5EA391D71514FD8900143E3F /* DynBox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
