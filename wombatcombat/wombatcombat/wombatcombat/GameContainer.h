@@ -22,7 +22,6 @@ private:
   
 public:
   sf::View view;
-  float cameraSpeed;
   
 public:
   GameContainer(sf::RenderWindow* window, b2World* world);
