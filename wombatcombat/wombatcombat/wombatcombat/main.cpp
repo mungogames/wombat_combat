@@ -6,12 +6,23 @@
 #include "ControlHandler.h"
 #include "GameContainer.h"
 #include "ContactListener.h"
+#include "item.h"
+#include "equiptable.h"
 #include <string>
+#include <iostream>
+
 
 
 int main (int argc, const char * argv[])
 {
-  
+  ////BORIS TEST BEGIN////
+  cout << "!";
+  Item testItem(1,7,75);
+  Equiptable testEquiptable(2,8,100,2);
+  testItem.devInfoPrint();
+  testEquiptable.devInfoPrint();
+  ////BORIS TEST END////
+
   string gameName = "Wombat Combat";
   
   bool fullscreen; 
@@ -19,17 +30,17 @@ int main (int argc, const char * argv[])
   // Generates the window and reads the window mode for resolution and colordepth
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode(); 
   sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
-  
+
   // Generates the World
   b2Vec2 gravity(0, -3);
   b2World* world = new b2World(gravity);
   
   ContactListener contactListener;
   world->SetContactListener(&contactListener);
-  
+
   // Time Step and Iterations for box2d
   float32 timeStep = 1.0f / 60.0f;
-  int32 velocityIterations = 8; 
+  int32 velocityIterations = 8;
   int32 positionIterations = 4;
 
   GameContainer* gc = new GameContainer(window, world);

@@ -36,6 +36,7 @@ public:
   Direction getMovingDirection();
   float getJumpSpeed();
   bool isRunning();
+  bool isMoving();
   
   //Setter
   void setJumpSpeed(float jumpSpeed);
