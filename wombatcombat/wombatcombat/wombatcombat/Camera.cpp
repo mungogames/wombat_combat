@@ -57,7 +57,7 @@ void Camera::update()
   else if (this->currentZoom > this->walkingZoom)
   {
     this->currentZoom -= this->zoomSpeed;
-    this->gc->view.zoom(1-this->zoomSpeed);
+    this->gc->view.zoom(1-this->zoomSpeed); 
   }
   
 
