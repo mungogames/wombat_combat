@@ -24,13 +24,21 @@ BaseGame::BaseGame(GameContainer* gc)
   	  this->terrain->addPoint(3, 110, 10);
   	  this->terrain->addPoint(4, 120, 50);
 
-  	this->rock1 = new Rock(gc, 4, 80,20);
-  	  this->rock1->addPoint(0,1,2);
-  	  this->rock1->addPoint(1,-3,4);
-  	  this->rock1->addPoint(2,-5,-4);
-  	  this->rock1->addPoint(3,3,-2);
+  	this->rock1 = new DynBox(gc, 4, 62,20);
+  	  this->rock1->addPoint(0,3,-1);
+  	  this->rock1->addPoint(1,0,0);
+  	  this->rock1->addPoint(2,0,-6);
+  	  this->rock1->addPoint(3,4,-6);
 
-  this->terrain->generate();
+  	this->rock2 = new DynBox(gc, 3, 55, 40);
+  		this->rock2->addPoint(0,0,0);
+  		this->rock2->addPoint(1,-2,-3);
+  		this->rock2->addPoint(2,2,-3);
+
+
+  	this->terrain->generate();
+  	this->rock1->generate();
+  	this->rock2->generate();
 }
 
 // Update everything
@@ -38,6 +46,8 @@ void BaseGame::update()
 {
   
   this->player->update(gc);
+  this->rock1->update(gc);
+  this->rock2->update(gc);
   this->camera->update();  
   
 }
@@ -52,8 +62,9 @@ void BaseGame::render()
     this->platforms.at(i)->render(this->gc->getWindow());
   */
   this->player->render(this->gc);
-  this->terrain->render(this->gc);
   this->rock1->render(this->gc);
+  this->rock2->render(this->gc);
+  this->terrain->render(this->gc);
   
   
   

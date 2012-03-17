@@ -13,7 +13,7 @@
 #include "GameContainer.h"
 #include "Terrain.h"
 #include "Camera.h"
-#include "Rock.h"
+#include "DynBox.h"
 
 class BaseGame {
 private:
@@ -22,7 +22,8 @@ private:
   Player* player;
   Camera* camera;
   Terrain* terrain;
-  Rock* rock1;
+  DynBox* rock1;
+  DynBox* rock2;
   
 public:
   BaseGame(GameContainer* gc);

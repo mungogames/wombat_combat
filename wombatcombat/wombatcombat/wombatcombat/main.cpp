@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
+#include <SFML/System.hpp>
 #include <Box2d/Box2d.h>
 #include "BaseGame.h"
 #include "ControlHandler.h"
@@ -19,7 +20,7 @@ int main (int argc, const char * argv[])
   // Generates the window and reads the window mode for resolution and colordepth
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode(); 
   sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
-  
+
   // Generates the World
   b2Vec2 gravity(0, -3);
   b2World* world = new b2World(gravity);

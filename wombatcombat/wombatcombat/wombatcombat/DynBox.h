@@ -4,8 +4,8 @@
  *      Author: sk
  */
 
-#ifndef wombatcombat_Rock_h
-#define wombatcombat_Rock_h
+#ifndef wombatcombat_DynBox_h
+#define wombatcombat_DynBox_h
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
@@ -13,7 +13,7 @@
 
 #include "GameContainer.h"
 
-class Rock
+class DynBox
 {
 	private:
 	int pointCount;
@@ -26,11 +26,11 @@ class Rock
 	b2Body* body;
 
 	public:
-	Rock (GameContainer* gc, int pointCount, float posX, float posY);
+	DynBox (GameContainer* gc, int pointCount, float posX, float posY);
 	void addPoint(int Index, float x, float y);
 	void generate();
 	void update(GameContainer* gc);
 	void render(GameContainer* gc);
 };
 
-#endif /* wombatcombat_Rock_h */
+#endif /* wombatcombat_DynBox_h */
