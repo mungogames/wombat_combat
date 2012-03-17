@@ -88,7 +88,6 @@ void Player::update(GameContainer* gc)
   
   // Player Control
   ControlHandler::player(this, sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::RShift, sf::Keyboard::Space);
-  
   // Update Moving
   float speed;
   if (this->running)
