@@ -18,7 +18,7 @@ Player::Player(GameContainer* gc, float posX, float feetPosY, float sizeX, float
   this->creatureData = new CreatureData("player");
     
   this->movingSpeed = 1.0f;
-  this->runningSpeed = 2.0f;
+  this->runningSpeed = 3.5f;
   this->jumpSpeed = 3;
   this->running = false;
   
@@ -42,6 +42,11 @@ float Player::getJumpSpeed()
 bool Player::isRunning()
 {
   return this->running;
+}
+
+bool Player::isMoving()
+{
+  return (this->movingDirection == RIGHT || this->movingDirection == LEFT);
 }
 
 

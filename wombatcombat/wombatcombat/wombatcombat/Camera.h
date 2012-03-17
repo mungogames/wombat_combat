@@ -24,6 +24,11 @@ private:
   GameContainer* gc;
   Player* player;
   
+  float currentZoom;
+  float walkingZoom;
+  float runningZoom;
+  float zoomSpeed;
+  
 public:  
   Camera (GameContainer* gc, Player* player, sf::Vector2f center, sf::Vector2f size);
   void update ();
