@@ -26,10 +26,10 @@ int main (int argc, const char * argv[])
   
   ContactListener contactListener;
   world->SetContactListener(&contactListener);
-  
+
   // Time Step and Iterations for box2d
   float32 timeStep = 1.0f / 60.0f;
-  int32 velocityIterations = 8; 
+  int32 velocityIterations = 8;
   int32 positionIterations = 4;
 
   GameContainer* gc = new GameContainer(window, world);
