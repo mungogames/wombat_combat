@@ -1,4 +1,4 @@
-//  Terain.cpp
+//  Terrain.cpp
 //  wombatcombat
 //
 //  Created by Simon Jentsch on 16.03.12.
