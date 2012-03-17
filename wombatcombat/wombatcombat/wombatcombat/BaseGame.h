@@ -25,6 +25,7 @@ class BaseGame
 	Terrain* terrain;
 	DynBox* rock1;
 	DynBox* rock2;
+	DynBox* boulder;
   
   public:
   	  BaseGame(GameContainer* gc);
