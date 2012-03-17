@@ -1,9 +1,8 @@
-//
 //  GameContainer.h
 //  wombatcombat
 //
 //  Created by Simon Jentsch on 16.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 __MungoGames__. All rights reserved.
 //
 
 #ifndef wombatcombat_GameContainer_h
@@ -12,7 +11,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-#include <Box2d/Box2d.h>
+#include <Box2D/Box2D.h>
 
 class GameContainer {
   
