@@ -12,7 +12,6 @@ GameContainer::GameContainer(sf::RenderWindow* window, b2World* world)
 {
   this->window = window;
   this->world = world;
-  this->cameraSpeed = 0.005f;
 }
 
 

@@ -13,6 +13,13 @@
 		5E625EDA1513E7EE0076984F /* GameContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E625ED51513E7EE0076984F /* GameContainer.cpp */; };
 		5E625EDB1513E7EE0076984F /* libBox2D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E625ED71513E7EE0076984F /* libBox2D.a */; };
 		5E625EDC1513E7EE0076984F /* Terrain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E625ED81513E7EE0076984F /* Terrain.cpp */; };
+		5E87357F151496BA00AF6142 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E87357E151496BA00AF6142 /* Player.cpp */; };
+		5E8735831514972E00AF6142 /* Creature.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735821514972E00AF6142 /* Creature.cpp */; };
+		5E8735881514A28400AF6142 /* CreatureData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735851514A28400AF6142 /* CreatureData.cpp */; };
+		5E8735891514A28400AF6142 /* SensorData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735871514A28400AF6142 /* SensorData.cpp */; };
+		5E87358E1514A48600AF6142 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E87358D1514A48600AF6142 /* Camera.cpp */; };
+		5E8735931514A4A900AF6142 /* ControlHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735911514A4A900AF6142 /* ControlHandler.cpp */; };
+		5E8735961514A4B800AF6142 /* BaseGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735941514A4B800AF6142 /* BaseGame.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,22 @@
 		5E625ED71513E7EE0076984F /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBox2D.a; sourceTree = "<group>"; };
 		5E625ED81513E7EE0076984F /* Terrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Terrain.cpp; sourceTree = "<group>"; };
 		5E625ED91513E7EE0076984F /* Terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
+		5E87357C151496B200AF6142 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		5E87357E151496BA00AF6142 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		5E8735801514971600AF6142 /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
+		5E8735811514972900AF6142 /* Creature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Creature.h; sourceTree = "<group>"; };
+		5E8735821514972E00AF6142 /* Creature.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Creature.cpp; sourceTree = "<group>"; };
+		5E8735841514A28300AF6142 /* CreatureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureData.h; sourceTree = "<group>"; };
+		5E8735851514A28400AF6142 /* CreatureData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CreatureData.cpp; sourceTree = "<group>"; };
+		5E8735861514A28400AF6142 /* SensorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorData.h; sourceTree = "<group>"; };
+		5E8735871514A28400AF6142 /* SensorData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SensorData.cpp; sourceTree = "<group>"; };
+		5E87358C1514A48600AF6142 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		5E87358D1514A48600AF6142 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		5E8735911514A4A900AF6142 /* ControlHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlHandler.cpp; sourceTree = "<group>"; };
+		5E8735921514A4A900AF6142 /* ControlHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlHandler.h; sourceTree = "<group>"; };
+		5E8735941514A4B800AF6142 /* BaseGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseGame.cpp; sourceTree = "<group>"; };
+		5E8735951514A4B800AF6142 /* BaseGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGame.h; sourceTree = "<group>"; };
+		5E8735981514A50000AF6142 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,13 +92,18 @@
 		5E625EB91513E7BE0076984F /* wombatcombat */ = {
 			isa = PBXGroup;
 			children = (
+				5E8735971514A4F100AF6142 /* Listener */,
+				5E8735901514A49900AF6142 /* Handlers */,
+				5E87358B1514A46200AF6142 /* Objects */,
+				5E87358A1514A3D200AF6142 /* Data */,
 				5E625ED51513E7EE0076984F /* GameContainer.cpp */,
 				5E625ED61513E7EE0076984F /* GameContainer.h */,
+				5E8735941514A4B800AF6142 /* BaseGame.cpp */,
+				5E8735951514A4B800AF6142 /* BaseGame.h */,
 				5E625ED71513E7EE0076984F /* libBox2D.a */,
-				5E625ED81513E7EE0076984F /* Terrain.cpp */,
-				5E625ED91513E7EE0076984F /* Terrain.h */,
 				5E625EBA1513E7BE0076984F /* main.cpp */,
 				5E625EC61513E7BE0076984F /* Supporting Files */,
+				5E8735801514971600AF6142 /* enums.h */,
 			);
 			path = wombatcombat;
 			sourceTree = "<group>";
@@ -87,6 +115,49 @@
 				5E625EC81513E7BE0076984F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E87358A1514A3D200AF6142 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5E8735841514A28300AF6142 /* CreatureData.h */,
+				5E8735851514A28400AF6142 /* CreatureData.cpp */,
+				5E8735861514A28400AF6142 /* SensorData.h */,
+				5E8735871514A28400AF6142 /* SensorData.cpp */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		5E87358B1514A46200AF6142 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5E87358C1514A48600AF6142 /* Camera.h */,
+				5E87358D1514A48600AF6142 /* Camera.cpp */,
+				5E625ED81513E7EE0076984F /* Terrain.cpp */,
+				5E625ED91513E7EE0076984F /* Terrain.h */,
+				5E87357C151496B200AF6142 /* Player.h */,
+				5E8735811514972900AF6142 /* Creature.h */,
+				5E8735821514972E00AF6142 /* Creature.cpp */,
+				5E87357E151496BA00AF6142 /* Player.cpp */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		5E8735901514A49900AF6142 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				5E8735911514A4A900AF6142 /* ControlHandler.cpp */,
+				5E8735921514A4A900AF6142 /* ControlHandler.h */,
+			);
+			name = Handlers;
+			sourceTree = "<group>";
+		};
+		5E8735971514A4F100AF6142 /* Listener */ = {
+			isa = PBXGroup;
+			children = (
+				5E8735981514A50000AF6142 /* ContactListener.h */,
+			);
+			name = Listener;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +238,13 @@
 				5E625EBB1513E7BE0076984F /* main.cpp in Sources */,
 				5E625EDA1513E7EE0076984F /* GameContainer.cpp in Sources */,
 				5E625EDC1513E7EE0076984F /* Terrain.cpp in Sources */,
+				5E87357F151496BA00AF6142 /* Player.cpp in Sources */,
+				5E8735831514972E00AF6142 /* Creature.cpp in Sources */,
+				5E8735881514A28400AF6142 /* CreatureData.cpp in Sources */,
+				5E8735891514A28400AF6142 /* SensorData.cpp in Sources */,
+				5E87358E1514A48600AF6142 /* Camera.cpp in Sources */,
+				5E8735931514A4A900AF6142 /* ControlHandler.cpp in Sources */,
+				5E8735961514A4B800AF6142 /* BaseGame.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

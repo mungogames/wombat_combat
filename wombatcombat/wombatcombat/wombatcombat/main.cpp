@@ -1,35 +1,38 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-#include <SFML/System.hpp>
-#include <Box2D/Box2D.h>
-
+#include <Box2d/Box2d.h>
+#include "BaseGame.h"
+#include "ControlHandler.h"
 #include "GameContainer.h"
-#include "Terrain.h"
-
+#include "ContactListener.h"
 #include <string>
 
-using namespace std;
 
 int main (int argc, const char * argv[])
 {
   
   string gameName = "Wombat Combat";
   
-
-  bool fullscreen = false;
+  bool fullscreen; 
   
-  // Create the main window
+  // Generates the window and reads the window mode for resolution and colordepth
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode(); 
-  sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2), gameName);
-
+  sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
+  
   // Generates the World
-  b2Vec2 gravity(0, -3); // Gravitation
-  b2World* world = new b2World(gravity); // Neue Welt
+  b2Vec2 gravity(0, -3);
+  b2World* world = new b2World(gravity);
   
+<<<<<<< HEAD
+  ContactListener contactListener;
+  world->SetContactListener(&contactListener);
   
-  GameContainer* gc = new GameContainer(window, world);
-  
+  // Time Step and Iterations for box2d
+  float32 timeStep = 1.0f / 60.0f;
+  int32 velocityIterations = 8; 
+  int32 positionIterations = 4;
+=======
   /*klassisches Koordinatensystem
    * linke Haelfte 196 Einheiten breit, obere haelfte 355 Einheiten hoch
    * rechte Haelfte 204 Einheiten breit, unter haelfte 350 Einheiten hoch   *
@@ -44,17 +47,15 @@ int main (int argc, const char * argv[])
   terrain->addPoint(5,	150,	-320);
   terrain->addPoint(6,	190,	-100);
   terrain->addPoint(7,	204,	355);
+>>>>>>> f4a87bb8b211a6502d4ca2d00cadaa76c9463789
   
-  float windowRatio = (float)gc->getWindow()->getSize().x / (float)gc->getWindow()->getSize().y;
-  gc->getWindow()->setView(sf::View(sf::Vector2f(4, -3), sf::Vector2f(400,400*windowRatio)));
+  GameContainer* gc = new GameContainer(window, world);
   
+  // Create the main window
+  gc->getWindow()->setFramerateLimit(500);
   
-  // Time Step and Iterations for box2d
-  float timeStep = 1.0f / 60.0f;
-  int velocityIterations = 6; 
-  int positionIterations = 2;
+  BaseGame* baseGame = new BaseGame(gc);
   
-  // Start the game loop
   while (gc->getWindow()->isOpen())
   {
   	// Process events
@@ -64,10 +65,10 @@ int main (int argc, const char * argv[])
   		// Close window : exit
   		if (event.type == sf::Event::Closed)
   			gc->getWindow()->close();
-          
+      
   		// Escape pressed : exit
   		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
-  			gc->getWindow()->close();
+        gc->getWindow()->close();
       
       //Fullscreen toggle 
       if ((event.type == sf::Event::KeyPressed) && (event.key.code == sf::Keyboard::F)) { 
@@ -80,21 +81,22 @@ int main (int argc, const char * argv[])
       } 
       
   	}
-
-    // Here goes the update method
     
-    world->Step(timeStep, velocityIterations, positionIterations);
+    gc->getWorld()->Step(timeStep, velocityIterations, positionIterations);
+    
+    // Update everything
+    baseGame->update();
     
   	// Clear screen
   	gc->getWindow()->clear();
-  	
-    // Here goes the render method
     
-    terrain->render(gc);
+    // Render everything
+    baseGame->render();
+    gc->getWindow()->setView(gc->view);
     
     // Update the window
   	gc->getWindow()->display();
   }
-
+  
 	return EXIT_SUCCESS;
 }

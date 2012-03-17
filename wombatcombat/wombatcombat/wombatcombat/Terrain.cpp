@@ -22,7 +22,7 @@ Terrain::Terrain (GameContainer* gc, int pointCount, float posX, float posY)
   // Creates Body in the World (Box2D)
   this->body = gc->getWorld()->CreateBody(this->bodyDef);
   
-  // Fixure (Box2D)
+  // Fixture (Box2D)
   this->chainVertices = new b2Vec2 [this->pointCount]; 
   this->renderVertices.setPrimitiveType(sf::LinesStrip);
   this->renderVertices.resize(this->pointCount);
