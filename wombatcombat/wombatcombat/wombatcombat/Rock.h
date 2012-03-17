@@ -19,18 +19,16 @@ class Rock
 	int pointCount;
 
 	b2Vec2* chainVertices;
-	sf::VertexArray renderVertices;
+	b2PolygonShape* polygon;
+	sf::ConvexShape* renderObj;
 
 	b2BodyDef* bodyDef;
 	b2Body* body;
-
-	b2PolygonShape* polyRock;
 
 	public:
 	Rock (GameContainer* gc, int pointCount, float posX, float posY);
 	void addPoint(int Index, float x, float y);
 	void generate();
-	void update(GameContainer* gc);
 	void render(GameContainer* gc);
 };
 

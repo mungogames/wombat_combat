@@ -20,25 +20,25 @@ Rock::Rock (GameContainer* gc, int pointCount, float posX, float posY)
 	this->body = gc->getWorld()->CreateBody(this->bodyDef);
 	//Fixture
 	this->chainVertices = new b2Vec2 [this->pointCount];
-	//Erstellen des grafischen Objekts auf dem Box2D-Objekt
-	this->renderVertices.setPrimitiveType(sf::LinesStrip);
-	this->renderVertices.resize(this->pointCount);
+	this->renderObj = new sf::ConvexShape();
+	this->renderObj->setPointCount(this->pointCount);
+	this->renderObj->setPosition(posX, posY);
 }
 
 void Rock::addPoint(int index, float x, float y)
 {
 	this->chainVertices[index].Set(x, y);
-	this->renderVertices[index] = sf::Vector2f(x, -y);
+	this->renderObj->setPoint(index, sf::Vector2f(x,y));
 }
 
 void Rock::generate()
 {
-	this->polyRock = new b2PolygonShape();
-	this->polyRock->Set(this->chainVertices, this->pointCount);
-	this->body->CreateFixture(this->polyRock, 0);
+	this->polygon = new b2PolygonShape();
+	this->polygon->Set(this->chainVertices, this->pointCount);
+	this->body->CreateFixture(this->polygon, 1);
 }
 
 void Rock::render(GameContainer*gc)
 {
-	gc->getWindow()->draw(this->renderVertices);
+	gc->getWindow()->draw(this->renderObj);
 }
