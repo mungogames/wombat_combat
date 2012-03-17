@@ -30,6 +30,8 @@ BaseGame::BaseGame(GameContainer* gc)
   	  this->rock1->addPoint(2,	0,	-10);
 
   this->terrain->generate();
+
+
 }
 
 // Update everything
@@ -37,7 +39,6 @@ void BaseGame::update()
 {
   
   this->player->update(gc);
-  this->rock1->
   this->camera->update();  
   
 }
