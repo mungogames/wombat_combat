@@ -13,7 +13,7 @@
 
 #include "GameContainer.h"
 
-class DynBox
+class DynOrb
 {
 	private:
 	int pointCount;
@@ -26,7 +26,7 @@ class DynBox
 	b2Body* body;
 
 	public:
-	DynBox (GameContainer* gc, int pointCount, float posX, float posY);
+	DynOrb (GameContainer* gc, int pointCount, float posX, float posY);
 	void addPoint(int Index, float x, float y);
 	void generate();
 	void update(GameContainer* gc);

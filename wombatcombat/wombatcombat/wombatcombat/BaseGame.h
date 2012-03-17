@@ -23,8 +23,9 @@ class BaseGame
 	Player* player;
 	Camera* camera;
 	Terrain* terrain;
-	DynBox* rock1;
-	DynBox* rock2;
+	DynOrb* rock1;
+	DynOrb* rock2;
+	DynOrb* boulder;
   
   public:
   	  BaseGame(GameContainer* gc);
