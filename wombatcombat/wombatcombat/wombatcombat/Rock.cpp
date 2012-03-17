@@ -20,15 +20,14 @@ Rock::Rock (GameContainer* gc, int pointCount, float posX, float posY)
 	this->body = gc->getWorld()->CreateBody(this->bodyDef);
 	//Fixture
 	this->chainVertices = new b2Vec2 [this->pointCount];
-	this->renderObj = new sf::ConvexShape();
-	this->renderObj->setPointCount(this->pointCount);
-	this->renderObj->setPosition(posX, posY);
+	this->renderObj = new sf::ConvexShape(this->pointCount);
+	this->renderObj->setPosition(posX, -posY);
 }
 
 void Rock::addPoint(int index, float x, float y)
 {
 	this->chainVertices[index].Set(x, y);
-	this->renderObj->setPoint(index, sf::Vector2f(x,y));
+	this->renderObj->setPoint(index, sf::Vector2f(x,-y));
 }
 
 void Rock::generate()
@@ -38,7 +37,12 @@ void Rock::generate()
 	this->body->CreateFixture(this->polygon, 1);
 }
 
+void Rock::update(GameContainer*gc)
+{
+	this->renderObj->setPosition(this->body->GetPosition().x, this->body->GetPosition().y);
+}
+
 void Rock::render(GameContainer*gc)
 {
-	gc->getWindow()->draw(this->renderObj);
+	gc->getWindow()->draw(*renderObj);
 }

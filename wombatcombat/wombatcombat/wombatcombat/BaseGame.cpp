@@ -24,10 +24,11 @@ BaseGame::BaseGame(GameContainer* gc)
   	  this->terrain->addPoint(3, 110, 10);
   	  this->terrain->addPoint(4, 120, 50);
 
-  	this->rock1 = new Rock(gc, 3, 0, 200);
-  	  this->rock1->addPoint(0,	-5,	0);
-  	  this->rock1->addPoint(1,	5,	0);
-  	  this->rock1->addPoint(2,	0,	-10);
+  	this->rock1 = new Rock(gc, 4, 80,20);
+  	  this->rock1->addPoint(0,1,2);
+  	  this->rock1->addPoint(1,-3,4);
+  	  this->rock1->addPoint(2,-5,-4);
+  	  this->rock1->addPoint(3,3,-2);
 
   this->terrain->generate();
 }

@@ -29,6 +29,7 @@ class Rock
 	Rock (GameContainer* gc, int pointCount, float posX, float posY);
 	void addPoint(int Index, float x, float y);
 	void generate();
+	void update(GameContainer* gc);
 	void render(GameContainer* gc);
 };
 
