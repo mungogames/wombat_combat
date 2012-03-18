@@ -62,7 +62,6 @@ void BaseGame::update()
   this->rock2->update(gc);
   this->boulder->update(gc);
   this->camera->update();
-
 }
 
 // Render everything

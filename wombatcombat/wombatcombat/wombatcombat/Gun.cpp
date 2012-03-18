@@ -87,7 +87,7 @@ void Gun::update(GameContainer* gc)
   {
     this->mousePressReady = true;
   }
-  
+
   // Updates all Arrows
   for (int i = 0 ; i < this->arrows.size() ; i++)
   {

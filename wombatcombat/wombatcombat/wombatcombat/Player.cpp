@@ -24,7 +24,8 @@ Player::Player(GameContainer* gc, float posX, float feetPosY, float sizeX, float
   
   this->creatureData->name = "Gaylord";
   this->creatureData->hitboxSize = b2Vec2(sizeX, sizeY);
-  
+  this->creatureData->lookingDirection = NONE;
+
   this->weapon = new Gun(this->creatureData, this->body, 10, 1.3);
   
 }
@@ -89,12 +90,8 @@ void Player::setRunning(bool running)
 // Update and render methods
 void Player::update(GameContainer* gc)
 {
-  
-  
   // Looking Direction
-  if (gc->getMouseSide() == NONE)
-    this->creatureData->lookingDirection = this->creatureData->lookingDirection;
-  else
+  if (true)
     this->creatureData->lookingDirection = gc->getMouseSide();
   
   // Player Control
