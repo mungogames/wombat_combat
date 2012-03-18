@@ -94,7 +94,6 @@ void Player::setRunning(bool running)
 void Player::update(GameContainer* gc)
 {
   
-  
   // Looking Direction BEGIN
   if (gc->getMouseSide() == NONE)
     this->creatureData->lookingDirection = this->creatureData->lookingDirection;
