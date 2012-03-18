@@ -39,7 +39,7 @@ void DynOrb::generate()
 {
 	this->polygon = new b2PolygonShape();
 	this->polygon->Set(this->chainVertices, this->pointCount);
-	this->body->CreateFixture(this->polygon, 0.001);
+	this->body->CreateFixture(this->polygon, 0.05);
 }
 
 void DynOrb::update(GameContainer*gc)

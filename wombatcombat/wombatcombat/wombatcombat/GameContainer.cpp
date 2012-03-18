@@ -11,7 +11,9 @@
 GameContainer::GameContainer(sf::RenderWindow* window, b2World* world)
 {
   this->window = window;
+  this->window->setFramerateLimit(500);
   this->world = world;
+
 }
 
 

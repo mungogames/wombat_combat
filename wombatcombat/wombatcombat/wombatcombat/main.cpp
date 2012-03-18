@@ -36,7 +36,6 @@ int main (int argc, const char * argv[])
   GameContainer* gc = new GameContainer(window, world);
 
   // Create the main window
-  gc->getWindow()->setFramerateLimit(500);
 
   BaseGame* baseGame = new BaseGame(gc);
 
