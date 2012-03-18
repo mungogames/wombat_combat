@@ -121,15 +121,9 @@ void Player::update(GameContainer* gc)
   
   // Update Render Position
   this->renderObj.setPosition(this->getPos().x, -this->getPos().y);
-  
-<<<<<<< HEAD
-  //Debug
-  cout << "xPos Player: " << this->getPos().x << " / " << "yPos Player: " << this->getPos().y << endl;
 
-=======
   this->weapon->update(gc);
-  
->>>>>>> bow
+
 }
 
 void Player::render(GameContainer* gc)

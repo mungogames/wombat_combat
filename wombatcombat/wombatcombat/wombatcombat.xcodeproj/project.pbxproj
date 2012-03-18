@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E443F191515EE6D00DC1027 /* Arrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E443F151515EE6D00DC1027 /* Arrow.cpp */; };
+		5E443F1A1515EE6D00DC1027 /* Gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E443F171515EE6D00DC1027 /* Gun.cpp */; };
 		5E625EB81513E7BE0076984F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E625EB71513E7BE0076984F /* Foundation.framework */; };
 		5E625EBB1513E7BE0076984F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E625EBA1513E7BE0076984F /* main.cpp */; };
 		5E625ECA1513E7BE0076984F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E625EC81513E7BE0076984F /* InfoPlist.strings */; };
@@ -24,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E443F151515EE6D00DC1027 /* Arrow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Arrow.cpp; sourceTree = "<group>"; };
+		5E443F161515EE6D00DC1027 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
+		5E443F171515EE6D00DC1027 /* Gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gun.cpp; sourceTree = "<group>"; };
+		5E443F181515EE6D00DC1027 /* Gun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gun.h; sourceTree = "<group>"; };
 		5E625EB31513E7BE0076984F /* wombatcombat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wombatcombat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E625EB71513E7BE0076984F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E625EBA1513E7BE0076984F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -67,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E443F131515EE5B00DC1027 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				5E443F151515EE6D00DC1027 /* Arrow.cpp */,
+				5E443F161515EE6D00DC1027 /* Arrow.h */,
+				5E443F171515EE6D00DC1027 /* Gun.cpp */,
+				5E443F181515EE6D00DC1027 /* Gun.h */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
 		5E625EA71513E7BE0076984F = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +112,7 @@
 		5E625EB91513E7BE0076984F /* wombatcombat */ = {
 			isa = PBXGroup;
 			children = (
+				5E443F131515EE5B00DC1027 /* Items */,
 				5E8735971514A4F100AF6142 /* Listener */,
 				5E8735901514A49900AF6142 /* Handlers */,
 				5E87358B1514A46200AF6142 /* Objects */,
@@ -251,6 +269,8 @@
 				5E8735931514A4A900AF6142 /* ControlHandler.cpp in Sources */,
 				5E8735961514A4B800AF6142 /* BaseGame.cpp in Sources */,
 				5EA391D71514FD8900143E3F /* DynBox.cpp in Sources */,
+				5E443F191515EE6D00DC1027 /* Arrow.cpp in Sources */,
+				5E443F1A1515EE6D00DC1027 /* Gun.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
