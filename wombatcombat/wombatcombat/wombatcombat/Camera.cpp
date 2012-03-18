@@ -60,5 +60,11 @@ void Camera::update()
     this->gc->view.zoom(1-this->zoomSpeed); 
   }
   
+  sf::Vector2f playerOnScreen = sf::Vector2f();
+  playerOnScreen.x = (this->player->getBody()->GetPosition().x - gc->getViewEdges().x) / gc->view.getSize().x * 100;
+  playerOnScreen.y = -(this->player->getBody()->GetPosition().y + gc->getViewEdges().y) / gc->view.getSize().y * 100;
+  
+  this->gc->setPlayerOnScreen(playerOnScreen);
+  
 
 }

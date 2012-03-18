@@ -9,6 +9,6 @@
 #include <iostream>
 #include "CreatureData.h"
 
-CreatureData::CreatureData (string name) {
-  this->name = name;
+CreatureData::CreatureData () {
+
 }

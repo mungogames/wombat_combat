@@ -48,6 +48,7 @@ public:
   b2Vec2 getHalfSize();
   sf::RectangleShape getShape();
   bool isOnGround();
+  b2Body* getBody();
   
   // Setter
   void setPos(float x, float y);
