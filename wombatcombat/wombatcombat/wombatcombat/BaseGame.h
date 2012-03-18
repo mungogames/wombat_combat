@@ -22,10 +22,11 @@ class BaseGame
   
 	Player* player;
 	Camera* camera;
-	Terrain* terrain;
-	DynOrb* rock1;
-	DynOrb* rock2;
-	DynOrb* boulder;
+	Terrain* entry;
+	DynBox* boulder;
+	DynBox* box1;
+	DynBox* box2;
+	DynBox* box3;
   
   public:
   	  BaseGame(GameContainer* gc);

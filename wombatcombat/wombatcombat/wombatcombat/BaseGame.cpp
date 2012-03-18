@@ -14,43 +14,58 @@ BaseGame::BaseGame(GameContainer* gc)
 	this->gc = gc;
 
 	float windowRatio = (float)gc->getWindow()->getSize().y / (float)gc->getWindow()->getSize().x;
-	this->player = new Player(gc, 60, 10, 0.4f, 1.8f);
+	this->player = new Player(gc, 7, -7, 0.4f, 1.8f);
 	this->camera = new Camera(gc, this->player, sf::Vector2f(4, -3), sf::Vector2f(30, 30*windowRatio));
 
-	this->terrain = new Terrain(gc, 7, 0, 0);
-		this->terrain->addPoint(0, 40, 50);
-		this->terrain->addPoint(1, 50, 0);
-		this->terrain->addPoint(2, 90, 5);
-		this->terrain->addPoint(3, 110, 10);
-		this->terrain->addPoint(4, 120, 50);
-		this->terrain->addPoint(5, 200, 45);
-		this->terrain->addPoint(6, 250, 55);
+	this->entry = new Terrain(gc, 14, 0, 0);
+		this->entry->addPoint(0, -4, 10);
+		this->entry->addPoint(1, 0, 0);
+		this->entry->addPoint(2, 6,-4);
+		this->entry->addPoint(3, 6,-7);
+		this->entry->addPoint(4, 10,-7);
+		this->entry->addPoint(5, 10,-11);
+		this->entry->addPoint(6, 14.4,-11);
+		this->entry->addPoint(7, 14.4,-9);
+		this->entry->addPoint(8, 17,-9);
+		this->entry->addPoint(9, 18,-9);
+		this->entry->addPoint(10, 18,-8);
+		this->entry->addPoint(11, 19,-8);
+		this->entry->addPoint(12, 19,-7);
+		this->entry->addPoint(13, 25,-7);
 
-  	this->rock1 = new DynOrb(gc, 4, 62,20);
-  		this->rock1->addPoint(0,3,-1);
-  		this->rock1->addPoint(1,0,0);
-  		this->rock1->addPoint(2,0,-6);
-  		this->rock1->addPoint(3,4,-6);
+	this->boulder = new DynBox(gc, 8,5, 0);
+	  	this->boulder->addPoint(0,0,0);
+	  	this->boulder->addPoint(1,-2,0);
+	  	this->boulder->addPoint(2,-3,-1);
+	  	this->boulder->addPoint(3,-3,-3);
+	  	this->boulder->addPoint(4,-2,-4);
+	  	this->boulder->addPoint(5,0,-4);
+	  	this->boulder->addPoint(6,1,-3);
+	  	this->boulder->addPoint(7,1,-1);
 
-  	this->rock2 = new DynOrb(gc, 3, 55, 40);
-  		this->rock2->addPoint(0,0,0);
-  		this->rock2->addPoint(1,-2,-3);
-  		this->rock2->addPoint(2,2,-3);
+	this->box1 = new DynBox(gc, 4,23, 0);
+	  	this->box1->addPoint(0,1,0);
+	  	this->box1->addPoint(1,0,0);
+	  	this->box1->addPoint(2,0,-1);
+	  	this->box1->addPoint(3,1,-1);
 
-  	this->boulder = new DynOrb(gc, 8, 105, 20);
-  		this->boulder->addPoint(0,0,0);
-  		this->boulder->addPoint(1,-2,0);
-  		this->boulder->addPoint(2,-3,-1);
-  		this->boulder->addPoint(3,-3,-3);
-  		this->boulder->addPoint(4,-2,-4);
-  		this->boulder->addPoint(5,0,-4);
-  		this->boulder->addPoint(6,1,-3);
-  		this->boulder->addPoint(7,1,-1);
+	this->box2 = new DynBox(gc, 4,23, 1);
+	  	this->box2->addPoint(0,1,0);
+	  	this->box2->addPoint(1,0,0);
+	  	this->box2->addPoint(2,0,-1);
+	  	this->box2->addPoint(3,1,-1);
 
-  	this->terrain->generate();
-  	this->rock1->generate();
-  	this->rock2->generate();
+	this->box3 = new DynBox(gc, 4,23, 2);
+	  	this->box3->addPoint(0,1,0);
+	  	this->box3->addPoint(1,0,0);
+	  	this->box3->addPoint(2,0,-1);
+	  	this->box3->addPoint(3,1,-1);
+
   	this->boulder->generate();
+  	this->box1->generate();
+  	this->box2->generate();
+  	this->box3->generate();
+  	this->entry->generate();
 }
 
 // Update everything
@@ -58,10 +73,11 @@ void BaseGame::update()
 {
 
   this->player->update(gc);
-  this->rock1->update(gc);
-  this->rock2->update(gc);
-  this->boulder->update(gc);
   this->camera->update();
+  this->boulder->update(gc);
+  this->box1->update(gc);
+  this->box2->update(gc);
+  this->box3->update(gc);
 }
 
 // Render everything
@@ -73,8 +89,9 @@ void BaseGame::render()
     this->platforms.at(i)->render(this->gc->getWindow());
   */
   this->player->render(this->gc);
-  this->rock1->render(this->gc);
-  this->rock2->render(this->gc);
   this->boulder->render(this->gc);
-  this->terrain->render(this->gc);
+  this->box1->render(this->gc);
+  this->box2->render(this->gc);
+  this->box3->render(this->gc);
+  this->entry->render(this->gc);
 }

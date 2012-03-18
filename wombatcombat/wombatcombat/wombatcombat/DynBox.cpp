@@ -9,7 +9,7 @@
 #define pi 3.14159265
 using namespace std;
 
-DynOrb::DynOrb (GameContainer* gc, int pointCount, float posX, float posY)
+DynBox::DynBox (GameContainer* gc, int pointCount, float posX, float posY)
 {
 	//pointCount Konstruktor in lokale Variable legen
 	this->pointCount = pointCount;
@@ -29,20 +29,20 @@ DynOrb::DynOrb (GameContainer* gc, int pointCount, float posX, float posY)
 	this->renderObj->setPosition(sf::Vector2f(posX, -posY));
 }
 
-void DynOrb::addPoint(int index, float x, float y)
+void DynBox::addPoint(int index, float x, float y)
 {
 	this->chainVertices[index].Set(x, y);
 	this->renderObj->setPoint(index, sf::Vector2f(x,-y));
 }
 
-void DynOrb::generate()
+void DynBox::generate()
 {
 	this->polygon = new b2PolygonShape();
 	this->polygon->Set(this->chainVertices, this->pointCount);
-	this->body->CreateFixture(this->polygon, 0.05);
+	this->body->CreateFixture(this->polygon, 1.0);
 }
 
-void DynOrb::update(GameContainer*gc)
+void DynBox::update(GameContainer*gc)
 {
 	float xb = this->body->GetPosition().x;
 	float yb = this->body->GetPosition().y;
@@ -53,7 +53,7 @@ void DynOrb::update(GameContainer*gc)
 	this->renderObj->setFillColor(sf::Color::Blue);
 }
 
-void DynOrb::render(GameContainer*gc)
+void DynBox::render(GameContainer*gc)
 {
 	gc->getWindow()->draw(*renderObj);
 }
