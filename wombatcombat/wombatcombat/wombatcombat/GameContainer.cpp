@@ -56,6 +56,11 @@ Direction GameContainer::getMouseSide ()
     return NONE;
 }
 
+sf::Time GameContainer::getDelta ()
+{
+  return this->delta;
+}
+
 // Setter
 void GameContainer::setWindow(sf::RenderWindow* window)
 {
@@ -76,4 +81,9 @@ void GameContainer::setViewCenterX(float x)
 void GameContainer::setPlayerOnScreen(sf::Vector2f pos)
 {
   this->playerOnScreen = sf::Vector2f((pos.x / 100) * this->getWindow()->getSize().x, (pos.y / 100) * this->getWindow()->getSize().y);
+}
+
+void GameContainer::setDelta(sf::Time delta)
+{
+  this->delta = delta;
 }

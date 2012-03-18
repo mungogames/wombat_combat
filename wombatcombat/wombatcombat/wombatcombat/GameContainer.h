@@ -22,6 +22,7 @@ private:
   b2World* world;
   
   sf::Vector2f playerOnScreen; // Player position in percentage in relation to the viewport
+  sf::Time delta;
   
 public:
   sf::View view;
@@ -36,12 +37,14 @@ public:
   sf::Vector2f getViewEdges();
   sf::Vector2f getPlayerOnScreen();
   Direction getMouseSide();
+  sf::Time getDelta();
   
   // Setter
   void setWindow(sf::RenderWindow* window);
   void setView(sf::View view);
   void setViewCenterX(float x);
   void setPlayerOnScreen(sf::Vector2f pos);
+  void setDelta(sf::Time delta);
   
 };
 

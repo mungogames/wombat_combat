@@ -29,9 +29,6 @@ Arrow::Arrow (GameContainer* gc, int damage, b2Vec2 speed, b2Vec2 pos, Direction
   radiant = (side == LEFT) ? -radiant : radiant; // If Player faces left, radiant is negated to calculate the right angle
   float angle = radiant  * (180/pi);  
   
-  
-  cout << angle << endl;
-  
   // Body Definition (Box2D)
   b2BodyDef bodyDef; // Generates a new body definition which contains values of the Body
   bodyDef.type = b2_dynamicBody;

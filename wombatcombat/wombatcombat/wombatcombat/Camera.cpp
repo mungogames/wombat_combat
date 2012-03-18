@@ -16,9 +16,9 @@ Camera::Camera (GameContainer* gc, Player* player, sf::Vector2f center, sf::Vect
   this->center = center;
   this->size = size;
   
-  this->currentZoom = 1;
-  this->walkingZoom = 1;
-  this->runningZoom = 1.4;
+  this->currentZoom = 1.0f;
+  this->walkingZoom = 1.0f;
+  this->runningZoom = 1.4f;
   this->zoomSpeed = 0.001;
   
   //View
@@ -49,16 +49,27 @@ void Camera::update()
     
   
   
-  if (this->player->isMoving() && this->player->isRunning() && this->currentZoom < this->runningZoom)
+  if (this->player->isMoving() && this->player->isRunning() && this->currentZoom <= this->runningZoom)
   {
-    this->currentZoom += this->zoomSpeed;
-    this->gc->view.zoom(1+this->zoomSpeed);
+    this->currentZoom += this->zoomSpeed * gc->getDelta().asMilliseconds();
+    this->gc->view.zoom(1+this->zoomSpeed * gc->getDelta().asMilliseconds());
   } 
-  else if (this->currentZoom > this->walkingZoom)
+  else if (this->player->isMoving() && !this->player->isRunning() && this->currentZoom >= this->walkingZoom)
   {
-    this->currentZoom -= this->zoomSpeed;
-    this->gc->view.zoom(1-this->zoomSpeed); 
+    this->currentZoom -= this->zoomSpeed * gc->getDelta().asMilliseconds();
+    this->gc->view.zoom(1-this->zoomSpeed * gc->getDelta().asMilliseconds()); 
   }
+  else if (!this->player->isMoving() && this->currentZoom >= this->walkingZoom)
+  {
+    this->currentZoom -= this->zoomSpeed * gc->getDelta().asMilliseconds();
+    this->gc->view.zoom(1-this->zoomSpeed * gc->getDelta().asMilliseconds()); 
+  }
+  
+  sf::Vector2f playerOnScreen = sf::Vector2f();
+  playerOnScreen.x = (this->player->getBody()->GetPosition().x - gc->getViewEdges().x) / gc->view.getSize().x * 100;
+  playerOnScreen.y = -(this->player->getBody()->GetPosition().y + gc->getViewEdges().y) / gc->view.getSize().y * 100;
+  
+  this->gc->setPlayerOnScreen(playerOnScreen);
   
   sf::Vector2f playerOnScreen = sf::Vector2f();
   playerOnScreen.x = (this->player->getBody()->GetPosition().x - gc->getViewEdges().x) / gc->view.getSize().x * 100;

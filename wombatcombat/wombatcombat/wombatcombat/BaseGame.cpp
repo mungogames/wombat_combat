@@ -14,7 +14,7 @@ BaseGame::BaseGame(GameContainer* gc)
 	this->gc = gc;
 
 	float windowRatio = (float)gc->getWindow()->getSize().y / (float)gc->getWindow()->getSize().x;
-	this->player = new Player(gc, 60, 10, 0.4f, 1.8f);
+	this->player = new Player(gc, 80, 10, 0.4f, 1.8f);
 	this->camera = new Camera(gc, this->player, sf::Vector2f(4, -3), sf::Vector2f(30, 30*windowRatio));
 
 	this->terrain = new Terrain(gc, 7, 0, 0);

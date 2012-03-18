@@ -20,23 +20,27 @@ int main (int argc, const char * argv[])
   // Generates the window and reads the window mode for resolution and colordepth
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode();
   sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
-
+  window->setFramerateLimit(60);
+  
+  sf::Clock frameTimer;
+  sf::Time deltaTime;
+  
+  
+  
   // Generates the World
-  b2Vec2 gravity(0, -3);
+  b2Vec2 gravity(0, -9.8);
   b2World* world = new b2World(gravity);
 
   ContactListener contactListener;
   world->SetContactListener(&contactListener);
 
   // Time Step and Iterations for box2d
-  float32 timeStep = 1.0f / 60.0f;
-  int32 velocityIterations = 8;
-  int32 positionIterations = 4;
+  float timeStep = 1.0 / 60.0;
 
   GameContainer* gc = new GameContainer(window, world);
 
   // Create the main window
-  gc->getWindow()->setFramerateLimit(500);
+  //gc->getWindow()->setFramerateLimit(500);
 
   BaseGame* baseGame = new BaseGame(gc);
 
@@ -65,12 +69,13 @@ int main (int argc, const char * argv[])
       }
       //
   	}
-
-    gc->getWorld()->Step(timeStep, velocityIterations, positionIterations);
-
+    
+    float currentFPS =  1000 / (gc->getDelta().asMicroseconds() / 1000.0f);    
+    
     // Update everything
-    baseGame->update();
-
+    baseGame->update();    
+    gc->getWorld()->Step(1/currentFPS, 8, 3);
+    
   	// Clear screen
   	gc->getWindow()->clear();
 
@@ -80,6 +85,9 @@ int main (int argc, const char * argv[])
 
     // Update the window
   	gc->getWindow()->display();
+    
+    gc->setDelta(frameTimer.restart());
+    
   }
 
 	return EXIT_SUCCESS;

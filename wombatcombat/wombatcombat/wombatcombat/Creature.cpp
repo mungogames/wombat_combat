@@ -35,11 +35,11 @@ Creature::Creature (GameContainer* gc, float posX, float feetPosY, float sizeX, 
   b2FixtureDef fixtureDef;
   fixtureDef.shape = &hitBox;
   fixtureDef.density = 1.0f; // Density of water, and because a human is almost water, also of a human
-  fixtureDef.friction = 0.6f;
+  fixtureDef.friction = 1;
   this->body->CreateFixture(&fixtureDef);
   
   
-  hitBox.SetAsBox(0.3, 0.3, b2Vec2(0,-(sizeY/2)), 0);
+  hitBox.SetAsBox(0.15, 0.1, b2Vec2(0,-(sizeY/2)), 0);
   fixtureDef.isSensor = true;
   this->footSensorData = new SensorData("foot_sensor");
   fixtureDef.userData = this->footSensorData;
