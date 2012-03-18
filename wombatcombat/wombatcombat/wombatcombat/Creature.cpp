@@ -13,7 +13,12 @@
 Creature::Creature (GameContainer* gc, float posX, float feetPosY, float sizeX, float sizeY)
 {
   this->gc = gc;
-    
+  
+  this->creatureData = new CreatureData();
+  
+  this->creatureData->name = "Creature";
+  this->creatureData->hitboxSize = b2Vec2(sizeX, sizeY);
+
   // Body Definition (Box2D)
   b2BodyDef bodyDef; // Generates a new body definition which contains values of the Body
   bodyDef.type = b2_dynamicBody; // Sets type of Body to Dynamic (can move / be moved)
@@ -93,6 +98,11 @@ sf::RectangleShape Creature::getShape()
   return this->renderObj;
 }
 
+b2Body* Creature::getBody()
+{
+  return this->body;
+}
+
 
 // Setter
 
@@ -106,7 +116,6 @@ void Creature::setPos(string side, float value)
 {
   /*if (side == "x") {
    this->setPos(value, this->getPos().y);
-   cout << this->getPos().x << "\n";
    } else if (side == "y") {
    this->setPos(this->getPos().x, value);
    }*/

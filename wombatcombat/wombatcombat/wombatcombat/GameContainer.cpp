@@ -33,6 +33,31 @@ float GameContainer::getViewCenterX()
   return this->view.getCenter().x;
 }
 
+sf::Vector2f GameContainer::getViewEdges()
+{
+  sf::Vector2f edges = this->view.getCenter();
+  edges.x -= this->view.getSize().x / 2;
+  edges.y -= this->view.getSize().y / 2;
+  
+  return edges;
+}
+
+sf::Vector2f GameContainer::getPlayerOnScreen()
+{
+  return this->playerOnScreen;
+}
+
+Direction GameContainer::getMouseSide ()
+{
+  sf::RenderWindow* window = this->window;
+  if (sf::Mouse::getPosition(*window).x < this->getPlayerOnScreen().x)
+    return LEFT;
+  else if (sf::Mouse::getPosition(*window).x > this->getPlayerOnScreen().x)
+    return RIGHT;
+  else
+    return NONE;
+}
+
 // Setter
 void GameContainer::setWindow(sf::RenderWindow* window)
 {
@@ -48,4 +73,9 @@ void GameContainer::setViewCenterX(float x)
 {
   this->view.setCenter(x, this->view.getCenter().y);
   this->window->setView(this->view);
+}
+
+void GameContainer::setPlayerOnScreen(sf::Vector2f pos)
+{
+  this->playerOnScreen = sf::Vector2f((pos.x / 100) * this->getWindow()->getSize().x, (pos.y / 100) * this->getWindow()->getSize().y);
 }

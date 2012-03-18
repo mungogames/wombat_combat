@@ -13,6 +13,7 @@
 #include "GameContainer.h"
 #include "Creature.h"
 #include "CreatureData.h"
+#include "Gun.h"
 
 using namespace std;
 
@@ -20,6 +21,8 @@ class Player: public Creature
 {
   //Parameters 
 private:  
+  Gun* weapon;
+  
   float movingSpeed;
   float runningSpeed;
   Direction movingDirection;

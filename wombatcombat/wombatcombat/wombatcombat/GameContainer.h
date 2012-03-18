@@ -13,28 +13,35 @@
 #include <SFML/Network.hpp>
 #include <Box2D/Box2D.h>
 
+#include "enums.h"
+
 class GameContainer {
   
 private:
   sf::RenderWindow* window;
   b2World* world;
   
+  sf::Vector2f playerOnScreen; // Player position in percentage in relation to the viewport
+  
 public:
   sf::View view;
   
 public:
-  GameContainer(sf::RenderWindow* window, b2World* world);
-  
+  GameContainer(sf::RenderWindow* window, b2World* world);  
   
   // Getter
   sf::RenderWindow* getWindow();
   b2World* getWorld();
   float getViewCenterX();
+  sf::Vector2f getViewEdges();
+  sf::Vector2f getPlayerOnScreen();
+  Direction getMouseSide();
   
   // Setter
   void setWindow(sf::RenderWindow* window);
   void setView(sf::View view);
   void setViewCenterX(float x);
+  void setPlayerOnScreen(sf::Vector2f pos);
   
 };
 

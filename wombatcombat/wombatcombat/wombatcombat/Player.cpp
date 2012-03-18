@@ -14,15 +14,18 @@
 
 Player::Player(GameContainer* gc, float posX, float feetPosY, float sizeX, float sizeY) 
 : Creature(gc, posX, feetPosY, sizeX, sizeY)
-{
-  this->creatureData = new CreatureData("player");
-    
+{    
   this->movingSpeed = 1.0f;
   this->runningSpeed = 3.5f;
   this->jumpSpeed = 3;
   this->running = false;
   
   this->movingDirection = NONE;
+  
+  this->creatureData->name = "Gaylord";
+  this->creatureData->hitboxSize = b2Vec2(sizeX, sizeY);
+  
+  this->weapon = new Gun(this->creatureData, this->body, 10, 1.3);
   
 }
 
@@ -82,9 +85,17 @@ void Player::setRunning(bool running)
   this->running = running;
 }
 
+
 // Update and render methods
 void Player::update(GameContainer* gc)
 {
+  
+  
+  // Looking Direction
+  if (gc->getMouseSide() == NONE)
+    this->creatureData->lookingDirection = this->creatureData->lookingDirection;
+  else
+    this->creatureData->lookingDirection = gc->getMouseSide();
   
   // Player Control
   ControlHandler::player(this, sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::RShift, sf::Keyboard::Space);
@@ -110,13 +121,14 @@ void Player::update(GameContainer* gc)
   
   // Update Render Position
   this->renderObj.setPosition(this->getPos().x, -this->getPos().y);
-  
-  //Debug
-  cout << "xPos Player: " << this->getPos().x << " / " << "yPos Player: " << this->getPos().y << endl;
+
+  this->weapon->update(gc);
 
 }
 
 void Player::render(GameContainer* gc)
 {
   gc->getWindow()->draw(renderObj);
+  this->weapon->render(gc);
 }
+
