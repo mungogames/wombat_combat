@@ -6,14 +6,12 @@
 class Equiptable : public Item
 {
 public:
-    Equiptable(int id, int name, int goldValue, int welcheHand);
+    Equiptable(int id, char name[], int goldValue, int welcheHand);
 
-    void devInfoPrint()
-    {
-        Item::devInfoPrint();
-        cout<<" welcheHand: "<<welcheHand;
-    };
+    string infoString();
+    void infoPrint();
 
+    void use(Player *player);
 private:
     int welcheHand;
 };

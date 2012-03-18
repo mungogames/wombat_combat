@@ -15,12 +15,21 @@
 
 int main (int argc, const char * argv[])
 {
-  ////BORIS TEST BEGIN////
-  cout << "!";
-  Item testItem(1,7,75);
-  Equiptable testEquiptable(2,8,100,2);
-  testItem.devInfoPrint();
-  testEquiptable.devInfoPrint();
+  ////BORIS TEST END////
+
+  Item testItem(1,"Truhe",75);
+  testItem.infoPrint();
+
+  Equiptable testEquiptable(2,"Messer",100,2);
+  testEquiptable.infoPrint();
+
+  Item* ItemEquiptable = new Equiptable(3,"Löffel",300,3);
+  ((Equiptable*)ItemEquiptable)->infoPrint();
+
+  Item* ItemEquiptable2 = new Equiptable(3,"Löffel",300,3);
+  ItemEquiptable2->infoPrint();
+
+
   ////BORIS TEST END////
 
   string gameName = "Wombat Combat";

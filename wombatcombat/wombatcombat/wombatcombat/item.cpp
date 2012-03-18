@@ -1,14 +1,26 @@
 #include "item.h"
+using namespace std;
 
-Item::Item(int id, int name, int goldValue)
+Item::Item(int id, char *name, int goldValue)
 {
     this->id=id;
     this->name=name;
     this->goldValue=goldValue;
 }
 
-void Item::devInfoPrint()
+string Item::infoString()
 {
-    cout<<"\nid: "<< this->id <<" name: "<<this->name<<" goldValue: "<<this->goldValue;
+   ostringstream os;
+   os << "id: " << id << " name: " << name << " goldValue: " << goldValue;
+   return os.str();
 }
 
+void Item::infoPrint()
+{
+    cout<<infoString()<<endl;
+}
+
+void Item::use(Player *player)
+{
+    //nichts passiert.
+}

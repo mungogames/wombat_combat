@@ -12,7 +12,8 @@ SOURCES += \
     wombatcombat/BaseGame.cpp \
     wombatcombat/Rock.cpp \
     wombatcombat/equiptable.cpp \
-    wombatcombat/item.cpp
+    wombatcombat/item.cpp \
+    wombatcombat/lootable.cpp
 
 LIBS += -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lBox2D
 
@@ -30,4 +31,5 @@ HEADERS += \
     wombatcombat/BaseGame.h \
     wombatcombat/Rock.h \
     wombatcombat/equiptable.h \
-    wombatcombat/item.h
+    wombatcombat/item.h \
+    wombatcombat/lootable.h

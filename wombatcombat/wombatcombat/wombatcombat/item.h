@@ -2,21 +2,25 @@
 #define ITEM_H
 
 #include <iostream>
+#include <sstream>
+#include "Player.h"
+
 using namespace std;
 
 class Item
 {
     public:
-        //Methods
-        Item(int id, int name, int goldValue);
+        Item(int id, char *name, int goldValue);
 
-        //gibt an wie viel "Gold" oder "Geld" das item wert ist.
-        void devInfoPrint();
+        virtual string infoString();
+        virtual void infoPrint();
+
+        virtual void use(Player* player);
 
     private:
         //Atrributs
         int id; //einzigartige id für das jeweilige objekt.
-        int name; //name des items.
+        char *name; //name des items.
         int goldValue; //gibt an wie viel "Gold" oder "Geld" das item wert ist.
 };
 

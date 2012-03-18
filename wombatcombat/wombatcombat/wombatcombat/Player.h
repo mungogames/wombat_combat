@@ -48,6 +48,11 @@ public:
   //Update and render methods
   void update(GameContainer* gc);
   void render(GameContainer* gc);
+
+  ///BORIS BEGIN
+
+  ///BORIS END
+
 };
 
 
