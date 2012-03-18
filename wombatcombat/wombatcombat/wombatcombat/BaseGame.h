@@ -14,6 +14,7 @@
 #include "Terrain.h"
 #include "Camera.h"
 #include "DynBox.h"
+#include "StatBox.h"
 
 class BaseGame
 {
@@ -27,6 +28,9 @@ class BaseGame
 	DynBox* box1;
 	DynBox* box2;
 	DynBox* box3;
+	StatBox* platform1;
+	StatBox* platform2;
+	StatBox* platform3;
   
   public:
   	  BaseGame(GameContainer* gc);

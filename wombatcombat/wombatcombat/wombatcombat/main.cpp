@@ -20,7 +20,7 @@ int main (int argc, const char * argv[])
   // Generates the window and reads the window mode for resolution and colordepth
   sf::VideoMode DesktopMode = sf::VideoMode::getDesktopMode();
   sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(DesktopMode.width/2, DesktopMode.height/2,DesktopMode.bitsPerPixel), gameName);
-  window->setFramerateLimit(60);
+  window->setVerticalSyncEnabled(true);
   
   sf::Clock frameTimer;
   sf::Time deltaTime;

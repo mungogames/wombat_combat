@@ -64,10 +64,31 @@ BaseGame::BaseGame(GameContainer* gc)
 	  	this->box3->addPoint(2,0,-1);
 	  	this->box3->addPoint(3,1,-1);
 
+	this->platform1 = new StatBox(gc, 4,37, -23);
+	  	this->platform1->addPoint(0,0,0);
+	  	this->platform1->addPoint(1,-5,0);
+	  	this->platform1->addPoint(2,-5,-1);
+	  	this->platform1->addPoint(3,0,-1);
+
+	this->platform2 = new StatBox(gc, 4,52, -47);
+	  	this->platform2->addPoint(0,0,0);
+	  	this->platform2->addPoint(1,-5,0);
+	  	this->platform2->addPoint(2,-5,-1);
+	  	this->platform2->addPoint(3,0,-1);
+
+	this->platform3 = new StatBox(gc, 4,37, -67);
+	  	this->platform3->addPoint(0,0,0);
+	  	this->platform3->addPoint(1,-5,0);
+	  	this->platform3->addPoint(2,-5,-1);
+	  	this->platform3->addPoint(3,0,-1);
+
   	this->boulder->generate();
   	this->box1->generate();
   	this->box2->generate();
   	this->box3->generate();
+  	this->platform1->generate();
+  	this->platform2->generate();
+  	this->platform3->generate();
   	this->entry->generate();
 }
 
@@ -96,5 +117,8 @@ void BaseGame::render()
   this->box1->render(this->gc);
   this->box2->render(this->gc);
   this->box3->render(this->gc);
+  this->platform1->render(this->gc);
+  this->platform2->render(this->gc);
+  this->platform3->render(this->gc);
   this->entry->render(this->gc);
 }

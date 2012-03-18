@@ -105,7 +105,7 @@ void Player::update(GameContainer* gc)
   
   
   // Player Control BEGIN
-  ControlHandler::player(this, sf::Keyboard::Right, sf::Keyboard::Left, sf::Keyboard::RShift, sf::Keyboard::Space);
+  ControlHandler::player(this, sf::Keyboard::D, sf::Keyboard::A, sf::Keyboard::LShift, sf::Keyboard::Space);
   // Player Control END
   
   
