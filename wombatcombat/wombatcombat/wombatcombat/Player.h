@@ -1,10 +1,12 @@
-//
-//  Player.h
-//  wombatcombat
-//
-//  Created by Simon Jentsch on 17.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
-//
+/////////////////////////////////////////////
+/// @brief Player class
+///
+/// @author Simon
+/// @version 0.2
+/// @date 2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
 
 #ifndef wombatcombat_Player_h
 #define wombatcombat_Player_h
@@ -21,7 +23,9 @@ class Player: public Creature
 {
   //Parameters 
 private:  
-  Gun* weapon;
+  GameContainer* gc;
+  
+  Gun* weapon; ///< Weapon of the player (to this point its a bow)
   
   float movingSpeed;
   float runningSpeed;
@@ -32,7 +36,15 @@ private:
   bool running;
   
 public:
-  // Constructor
+  
+  /////////////////////////////////////////////
+  /// @brief Constructor
+  //
+  /// @param gc             Reference to the GameContainer
+  /// @param posX,feetPosY  Position of the player, Y-pos describes lower edge of the hitbox
+  /// @param sizex,sizeY    Size of the hitbox in two directions
+  /////////////////////////////////////////////
+  
   Player(GameContainer* gc, float posX, float posY, float sizeX, float sizeY);
   
   // Getter
@@ -49,8 +61,8 @@ public:
   void setRunning(bool running);
   
   //Update and render methods
-  void update(GameContainer* gc);
-  void render(GameContainer* gc);
+  void update();
+  void render();
 };
 
 

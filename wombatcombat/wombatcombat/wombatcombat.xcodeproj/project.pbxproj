@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E3F1DAB15164F5F00557798 /* StatBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F1DA915164F5F00557798 /* StatBox.cpp */; };
 		5E443F191515EE6D00DC1027 /* Arrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E443F151515EE6D00DC1027 /* Arrow.cpp */; };
 		5E443F1A1515EE6D00DC1027 /* Gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E443F171515EE6D00DC1027 /* Gun.cpp */; };
 		5E625EB81513E7BE0076984F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E625EB71513E7BE0076984F /* Foundation.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E3F1DA915164F5F00557798 /* StatBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatBox.cpp; sourceTree = "<group>"; };
+		5E3F1DAA15164F5F00557798 /* StatBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatBox.h; sourceTree = "<group>"; };
 		5E443F151515EE6D00DC1027 /* Arrow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Arrow.cpp; sourceTree = "<group>"; };
 		5E443F161515EE6D00DC1027 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
 		5E443F171515EE6D00DC1027 /* Gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gun.cpp; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				5E87357C151496B200AF6142 /* Player.h */,
 				5EA391D51514FD8900143E3F /* DynBox.cpp */,
 				5EA391D61514FD8900143E3F /* DynBox.h */,
+				5E3F1DA915164F5F00557798 /* StatBox.cpp */,
+				5E3F1DAA15164F5F00557798 /* StatBox.h */,
 				5E8735811514972900AF6142 /* Creature.h */,
 				5E8735821514972E00AF6142 /* Creature.cpp */,
 				5E87357E151496BA00AF6142 /* Player.cpp */,
@@ -271,6 +276,7 @@
 				5EA391D71514FD8900143E3F /* DynBox.cpp in Sources */,
 				5E443F191515EE6D00DC1027 /* Arrow.cpp in Sources */,
 				5E443F1A1515EE6D00DC1027 /* Gun.cpp in Sources */,
+				5E3F1DAB15164F5F00557798 /* StatBox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

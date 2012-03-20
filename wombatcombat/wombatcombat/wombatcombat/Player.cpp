@@ -1,20 +1,33 @@
-//
-//  Player.cpp
-//  wombatcombat
-//
-//  Created by Simon Jentsch on 17.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
-//
+/////////////////////////////////////////////
+/// @brief Player class
+///
+/// @author Simon
+/// @version 0.2
+/// @date 2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
+
+
+
 
 #include "Player.h"
 #include "ControlHandler.h"
 #include <iostream>
 
-// Constructor
+/////////////////////////////////////////////
+/// @brief Constructor
+//
+/// @param gc             Reference to the GameContainer
+/// @param posX,feetPosY  Position of the player, Y-pos describes lower edge of the hitbox
+/// @param sizex,sizeY    Size of the hitbox in two directions
+/////////////////////////////////////////////
 
 Player::Player(GameContainer* gc, float posX, float feetPosY, float sizeX, float sizeY) 
 : Creature(gc, posX, feetPosY, sizeX, sizeY)
 {    
+  this->gc = gc;
+  
   this->movingSpeed = 6;
   this->runningSpeed = 15;
   this->jumpSpeed = 5;
@@ -30,7 +43,10 @@ Player::Player(GameContainer* gc, float posX, float feetPosY, float sizeX, float
 }
 
 
-// Getter
+//@{
+/////////////////////////////////////////////
+/// @brief Getter
+/////////////////////////////////////////////
 
 Direction Player::getMovingDirection() 
 {
@@ -51,21 +67,17 @@ bool Player::isMoving()
 {
   return (this->movingDirection == RIGHT || this->movingDirection == LEFT);
 }
+//@}
 
 
-// Setter
+//@{
+/////////////////////////////////////////////
+/// @brief Setter
+/////////////////////////////////////////////
 
 void Player::setJumpSpeed(float jumpSpeed)
 {
   this->jumpSpeed = jumpSpeed;
-}
-
-void Player::move(Direction direction) 
-{
-  if (this->isOnGround()) {
-    this->movingDirection = direction;
-    this->body->GetFixtureList()->SetFriction(0);
-  }
 }
 
 void Player::stopMoving()
@@ -73,6 +85,38 @@ void Player::stopMoving()
   this->movingDirection = NONE;
   this->body->GetFixtureList()->SetFriction(1);
 }
+
+void Player::setRunning(bool running) 
+{
+  this->running = running;
+}
+//@}
+
+
+
+/////////////////////////////////////////////
+/// @brief Moves the player in the defined direction
+///
+/// Speed is defined depending on whether the player is walking,
+/// running or sticking on a wall
+///
+/// @param gc             Reference to the GameContainer
+/////////////////////////////////////////////
+
+void Player::move(Direction direction) 
+{
+  this->movingDirection = direction;
+  this->body->GetFixtureList()->SetFriction(0);
+}
+
+
+
+/////////////////////////////////////////////
+/// @brief Let the player jump
+///
+/// Player can only jump if he is on the ground (no jump mid-air)
+/// Jump force is defined with the mass of the player
+/////////////////////////////////////////////
 
 void Player::jump() 
 {
@@ -84,14 +128,17 @@ void Player::jump()
   }
 }
 
-void Player::setRunning(bool running) 
-{
-  this->running = running;
-}
 
 
-// Update and render methods
-void Player::update(GameContainer* gc)
+/////////////////////////////////////////////
+/// @brief Updates the player
+///
+/// Updates all different values (especially of the rendering update)
+/// like input, looking direction depending on the mouse position,
+/// moving depending on the speed of the player (walking, running, ...)
+/////////////////////////////////////////////
+
+void Player::update()
 {
   
   // Looking Direction BEGIN
@@ -102,38 +149,30 @@ void Player::update(GameContainer* gc)
   // Looking Direction END
   
   
-  
-  
   // Player Control BEGIN
   ControlHandler::player(this, sf::Keyboard::D, sf::Keyboard::A, sf::Keyboard::LShift, sf::Keyboard::Space);
   // Player Control END
   
-  
-  
-  
   // Update Moving BEGIN
-  if (this->isOnGround())
+  b2Vec2 vel = this->body->GetLinearVelocity();
+  float speed;  
+  if (!this->isOnGround() && vel.x == 0)
+    speed = 0;
+  else if (this->running)
+    speed = this->runningSpeed;
+  else
+    speed = this->movingSpeed;
+  
+  float desiredVel;
+  switch ( this->movingDirection )
   {
-    float speed;
-    if (this->running)
-      speed = this->runningSpeed;
-    else
-      speed = this->movingSpeed;
-    
-    cout << this->body->GetMass() << endl;
-    
-    b2Vec2 vel = this->body->GetLinearVelocity();
-    float desiredVel;
-    switch ( this->movingDirection )
-    {
-      case LEFT:  desiredVel = max( vel.x - 0.8f, -speed); break;
-      case RIGHT: desiredVel = b2Min( vel.x + 0.8f, speed ); break;
-      default: desiredVel = vel.x * 0.98f; break;
-    }
-    float velChange = desiredVel - vel.x;
-    float impulse = body->GetMass() * velChange;
-    this->body->ApplyLinearImpulse( b2Vec2(impulse,0), this->body->GetWorldCenter() );
+    case LEFT:  desiredVel = max( vel.x - 0.8f, -speed); break;
+    case RIGHT: desiredVel = b2Min( vel.x + 0.8f, speed); break;
+    default: desiredVel = vel.x * 0.98f; break;
   }
+  float velChange = desiredVel - vel.x;
+  float impulse = body->GetMass() * velChange;
+  this->body->ApplyLinearImpulse( b2Vec2(impulse,0), this->body->GetWorldCenter() );
   // Update Moving END
   
   
@@ -144,9 +183,17 @@ void Player::update(GameContainer* gc)
 
 }
 
-void Player::render(GameContainer* gc)
+
+
+/////////////////////////////////////////////
+/// @brief Renders the object
+///
+/// Draws the render object and calls the render method of the weapon
+/////////////////////////////////////////////
+
+void Player::render()
 {
   gc->getWindow()->draw(renderObj);
-  this->weapon->render(gc);
+  this->weapon->render(this->gc);
 }
 

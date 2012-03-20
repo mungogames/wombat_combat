@@ -39,7 +39,7 @@ Creature::Creature (GameContainer* gc, float posX, float feetPosY, float sizeX, 
   this->body->CreateFixture(&fixtureDef);
   
   
-  hitBox.SetAsBox(0.15, 0.1, b2Vec2(0,-(sizeY/2)), 0);
+  hitBox.SetAsBox(0.08, 0.1, b2Vec2(0,-(sizeY/2)), 0);
   fixtureDef.isSensor = true;
   this->footSensorData = new SensorData("foot_sensor");
   fixtureDef.userData = this->footSensorData;
