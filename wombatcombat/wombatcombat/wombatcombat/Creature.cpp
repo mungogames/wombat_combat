@@ -1,14 +1,23 @@
-//
-//  Creature.cpp
-//  wombatcombat
-//
-//  Created by Simon Jentsch on 17.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
-//
+/////////////////////////////////////////////
+/// @brief Creature Class
+/// Base class for all sorts of creatures like the player, NPCs or Enemies
+///
+/// @author Simon J
+/// @date 03/15/2012 - 03/18/2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
 
 #include <iostream>
 #include "Creature.h"
 
+/////////////////////////////////////////////
+/// @brief Constructor
+//
+/// @param gc             Reference to the GameContainer
+/// @param posX,feetPosY  Position of the player, Y-pos describes lower edge of the hitbox (in meters)
+/// @param sizex,sizeY    Size of the hitbox in two directions (in meters)
+/////////////////////////////////////////////
 
 Creature::Creature (GameContainer* gc, float posX, float feetPosY, float sizeX, float sizeY)
 {
@@ -53,7 +62,12 @@ Creature::Creature (GameContainer* gc, float posX, float feetPosY, float sizeX, 
   this->renderObj.setFillColor(sf::Color::Red);
 }
 
-// Getter
+
+
+//@{
+/////////////////////////////////////////////
+/// @brief Getter
+/////////////////////////////////////////////
 
 b2Vec2 Creature::getPos() 
 {
@@ -103,8 +117,20 @@ b2Body* Creature::getBody()
   return this->body;
 }
 
+bool Creature::isOnGround() {
+  if (this->footSensorData->contactCount > 0)
+    return true;
+  else
+    return false;
+}
+//@}
 
-// Setter
+
+
+//@{
+/////////////////////////////////////////////
+/// @brief Setter
+/////////////////////////////////////////////
 
 void Creature::setPos(float x, float y) 
 {
@@ -136,10 +162,4 @@ void Creature::setSize(string side, float value)
    this->size.y = value;
    }*/
 }
-
-bool Creature::isOnGround() {
-  if (this->footSensorData->contactCount > 0)
-    return true;
-  else
-    return false;
-}
+//@}

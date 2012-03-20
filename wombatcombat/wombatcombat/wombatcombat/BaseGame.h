@@ -13,8 +13,7 @@
 #include "GameContainer.h"
 #include "Terrain.h"
 #include "Camera.h"
-#include "DynBox.h"
-#include "StatBox.h"
+#include "PolyBox.h"
 
 class BaseGame
 {
@@ -24,13 +23,13 @@ class BaseGame
 	Player* player;
 	Camera* camera;
 	Terrain* entry;
-	DynBox* boulder;
-	DynBox* box1;
-	DynBox* box2;
-	DynBox* box3;
-	StatBox* platform1;
-	StatBox* platform2;
-	StatBox* platform3;
+	PolyBox* boulder;
+	PolyBox* box1;
+	PolyBox* box2;
+	PolyBox* box3;
+	PolyBox* platform1;
+	PolyBox* platform2;
+	PolyBox* platform3;
   
   public:
   	  BaseGame(GameContainer* gc);

@@ -1,10 +1,13 @@
-//
-//  Camera.h
-//  notld_pt
-//
-//  Created by Simon Jentsch on 15.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
-//
+/////////////////////////////////////////////
+/// @brief Camera class
+/// Camera that can move relative to the player, zooming depending on 
+/// the movement speed or defining the position of the player on the screen
+///
+/// @author Simon J
+/// @date 03/15/2012 - 03/18/2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
 
 #ifndef notld_pt_Camera_h
 #define notld_pt_Camera_h
@@ -19,6 +22,8 @@
 class Camera {
 
 private:
+  
+  // Private attributes
   sf::Vector2f center;
   sf::Vector2f size;
   GameContainer* gc;

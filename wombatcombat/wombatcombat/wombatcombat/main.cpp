@@ -1,3 +1,16 @@
+/////////////////////////////////////////////
+/// @brief Wombat Combat Prototype
+///
+/// @author Simon J
+/// @author Simon K
+/// @author Boris
+///
+/// @version 0.0.1
+/// @date 2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>

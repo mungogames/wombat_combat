@@ -1,10 +1,12 @@
-//
-//  Creature.h
-//  wombatcombat
-//
-//  Created by Simon Jentsch on 17.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
-//
+/////////////////////////////////////////////
+/// @brief Creature Class
+/// Base class for all sorts of creatures like the player, NPCs or Enemies
+///
+/// @author Simon J
+/// @date 03/15/2012 - 03/18/2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
 
 #ifndef wombatcombat_Creature_h
 #define wombatcombat_Creature_h

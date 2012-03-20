@@ -1,9 +1,9 @@
 /////////////////////////////////////////////
 /// @brief Player class
+/// Player that can jump, move and has a weapon
 ///
-/// @author Simon
-/// @version 0.2
-/// @date 2012
+/// @author Simon J
+/// @date 03/15/2012 - 03/18/2012
 ///
 /// @copyright Mungo Games
 /////////////////////////////////////////////
@@ -19,8 +19,8 @@
 /// @brief Constructor
 //
 /// @param gc             Reference to the GameContainer
-/// @param posX,feetPosY  Position of the player, Y-pos describes lower edge of the hitbox
-/// @param sizex,sizeY    Size of the hitbox in two directions
+/// @param posX,feetPosY  Position of the player, Y-pos describes lower edge of the hitbox (in meters)
+/// @param sizex,sizeY    Size of the hitbox in two directions (in meters)
 /////////////////////////////////////////////
 
 Player::Player(GameContainer* gc, float posX, float feetPosY, float sizeX, float sizeY) 

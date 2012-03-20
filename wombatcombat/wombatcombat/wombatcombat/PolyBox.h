@@ -13,9 +13,10 @@
 
 #include "GameContainer.h"
 
-class DynBox
+class PolyBox
 {
 	private:
+  GameContainer* gc;
 	int pointCount;
 
 	b2Vec2* chainVertices;
@@ -26,11 +27,17 @@ class DynBox
 	b2Body* body;
 
 	public:
-	DynBox (GameContainer* gc, int pointCount, float posX, float posY);
-	void addPoint(int Index, float x, float y);
+  PolyBox (GameContainer* gc, int pointCount, float posX, float posY);
+	PolyBox (GameContainer* gc, int pointCount, float posX, float posY, b2BodyType type);
+	void Constructor (GameContainer* gc, int pointCount, float posX, float posY, b2BodyType type);
+  void addPoint(int Index, float x, float y);
 	void generate();
-	void update(GameContainer* gc);
-	void render(GameContainer* gc);
+  
+  // Setter
+  void setColor(sf::Color color);
+  
+	void update();
+	void render();
 };
 
 #endif /* wombatcombat_DynBox_h */

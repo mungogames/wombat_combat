@@ -1,9 +1,8 @@
 /////////////////////////////////////////////
 /// @brief Player class
 ///
-/// @author Simon
-/// @version 0.2
-/// @date 2012
+/// @author Simon J
+/// @date 03/15/2012 - 03/18/2012
 ///
 /// @copyright Mungo Games
 /////////////////////////////////////////////
@@ -36,32 +35,25 @@ private:
   bool running;
   
 public:
-  
-  /////////////////////////////////////////////
-  /// @brief Constructor
-  //
-  /// @param gc             Reference to the GameContainer
-  /// @param posX,feetPosY  Position of the player, Y-pos describes lower edge of the hitbox
-  /// @param sizex,sizeY    Size of the hitbox in two directions
-  /////////////////////////////////////////////
-  
   Player(GameContainer* gc, float posX, float posY, float sizeX, float sizeY);
   
-  // Getter
+  /// @brief Getter
   Direction getMovingDirection();
   float getJumpSpeed();
   bool isRunning();
   bool isMoving();
   
-  //Setter
+  /// @brief Setter
   void setJumpSpeed(float jumpSpeed);
   void move(Direction direction);
   void stopMoving();
   void jump();
   void setRunning(bool running);
   
-  //Update and render methods
+  /// @brief Updates the player
   void update();
+  
+  /// @brief Renders the object
   void render();
 };
 

@@ -36,7 +36,7 @@ BaseGame::BaseGame(GameContainer* gc)
 		this->entry->addPoint(15, 50,-80);
 		this->entry->addPoint(16, 55,0);
 
-	this->boulder = new DynBox(gc, 8,3, 3);
+	this->boulder = new PolyBox(gc, 8, 3, 3);
 	  	this->boulder->addPoint(0,0,0);
 	  	this->boulder->addPoint(1,-2,0);
 	  	this->boulder->addPoint(2,-3,-1);
@@ -46,37 +46,40 @@ BaseGame::BaseGame(GameContainer* gc)
 	  	this->boulder->addPoint(6,1,-3);
 	  	this->boulder->addPoint(7,1,-1);
 
-	this->box1 = new DynBox(gc, 4,23, 0);
+	this->box1 = new PolyBox(gc, 4,23, 0);
 	  	this->box1->addPoint(0,1,0);
 	  	this->box1->addPoint(1,0,0);
 	  	this->box1->addPoint(2,0,-1);
 	  	this->box1->addPoint(3,1,-1);
 
-	this->box2 = new DynBox(gc, 4,23, 1);
+	this->box2 = new PolyBox(gc, 4,23, 1);
 	  	this->box2->addPoint(0,1,0);
 	  	this->box2->addPoint(1,0,0);
 	  	this->box2->addPoint(2,0,-1);
 	  	this->box2->addPoint(3,1,-1);
 
-	this->box3 = new DynBox(gc, 4,23, 2);
+	this->box3 = new PolyBox(gc, 4,23, 2);
 	  	this->box3->addPoint(0,1,0);
 	  	this->box3->addPoint(1,0,0);
 	  	this->box3->addPoint(2,0,-1);
 	  	this->box3->addPoint(3,1,-1);
 
-	this->platform1 = new StatBox(gc, 4,37, -23);
+	this->platform1 = new PolyBox(gc, 4,37, -23, b2_staticBody);
+      this->platform1->setColor(sf::Color::Yellow);
 	  	this->platform1->addPoint(0,0,0);
 	  	this->platform1->addPoint(1,-5,0);
 	  	this->platform1->addPoint(2,-5,-1);
 	  	this->platform1->addPoint(3,0,-1);
 
-	this->platform2 = new StatBox(gc, 4,52, -47);
+	this->platform2 = new PolyBox(gc, 4,52, -47, b2_staticBody);
+      this->platform2->setColor(sf::Color::Yellow);
 	  	this->platform2->addPoint(0,0,0);
 	  	this->platform2->addPoint(1,-5,0);
 	  	this->platform2->addPoint(2,-5,-1);
 	  	this->platform2->addPoint(3,0,-1);
 
-	this->platform3 = new StatBox(gc, 4,37, -67);
+	this->platform3 = new PolyBox(gc, 4,37, -67, b2_staticBody);
+      this->platform3->setColor(sf::Color::Yellow);
 	  	this->platform3->addPoint(0,0,0);
 	  	this->platform3->addPoint(1,-5,0);
 	  	this->platform3->addPoint(2,-5,-1);
@@ -96,12 +99,12 @@ BaseGame::BaseGame(GameContainer* gc)
 void BaseGame::update()
 {
 
-  this->player->update(gc);
+  this->player->update();
   this->camera->update();
-  this->boulder->update(gc);
-  this->box1->update(gc);
-  this->box2->update(gc);
-  this->box3->update(gc);
+  this->boulder->update();
+  this->box1->update();
+  this->box2->update();
+  this->box3->update();
 }
 
 // Render everything
@@ -112,13 +115,13 @@ void BaseGame::render()
   for(int i = 0 ; i < this->platforms.size() ; i++)
     this->platforms.at(i)->render(this->gc->getWindow());
   */
-  this->player->render(this->gc);
-  this->boulder->render(this->gc);
-  this->box1->render(this->gc);
-  this->box2->render(this->gc);
-  this->box3->render(this->gc);
-  this->platform1->render(this->gc);
-  this->platform2->render(this->gc);
-  this->platform3->render(this->gc);
+  this->player->render();
+  this->boulder->render();
+  this->box1->render();
+  this->box2->render();
+  this->box3->render();
+  this->platform1->render();
+  this->platform2->render();
+  this->platform3->render();
   this->entry->render(this->gc);
 }

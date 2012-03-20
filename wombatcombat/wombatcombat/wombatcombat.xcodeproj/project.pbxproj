@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E3F1DAB15164F5F00557798 /* StatBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E3F1DA915164F5F00557798 /* StatBox.cpp */; };
 		5E443F191515EE6D00DC1027 /* Arrow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E443F151515EE6D00DC1027 /* Arrow.cpp */; };
 		5E443F1A1515EE6D00DC1027 /* Gun.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E443F171515EE6D00DC1027 /* Gun.cpp */; };
 		5E625EB81513E7BE0076984F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E625EB71513E7BE0076984F /* Foundation.framework */; };
@@ -23,12 +22,10 @@
 		5E87358E1514A48600AF6142 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E87358D1514A48600AF6142 /* Camera.cpp */; };
 		5E8735931514A4A900AF6142 /* ControlHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735911514A4A900AF6142 /* ControlHandler.cpp */; };
 		5E8735961514A4B800AF6142 /* BaseGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735941514A4B800AF6142 /* BaseGame.cpp */; };
-		5EA391D71514FD8900143E3F /* DynBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EA391D51514FD8900143E3F /* DynBox.cpp */; };
+		5EA391D71514FD8900143E3F /* PolyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EA391D51514FD8900143E3F /* PolyBox.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5E3F1DA915164F5F00557798 /* StatBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatBox.cpp; sourceTree = "<group>"; };
-		5E3F1DAA15164F5F00557798 /* StatBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatBox.h; sourceTree = "<group>"; };
 		5E443F151515EE6D00DC1027 /* Arrow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Arrow.cpp; sourceTree = "<group>"; };
 		5E443F161515EE6D00DC1027 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
 		5E443F171515EE6D00DC1027 /* Gun.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Gun.cpp; sourceTree = "<group>"; };
@@ -59,8 +56,8 @@
 		5E8735941514A4B800AF6142 /* BaseGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseGame.cpp; sourceTree = "<group>"; };
 		5E8735951514A4B800AF6142 /* BaseGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGame.h; sourceTree = "<group>"; };
 		5E8735981514A50000AF6142 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
-		5EA391D51514FD8900143E3F /* DynBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DynBox.cpp; sourceTree = "<group>"; };
-		5EA391D61514FD8900143E3F /* DynBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynBox.h; sourceTree = "<group>"; };
+		5EA391D51514FD8900143E3F /* PolyBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolyBox.cpp; sourceTree = "<group>"; };
+		5EA391D61514FD8900143E3F /* PolyBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolyBox.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E1680931518A09F00372BAF /* Creatures */ = {
+			isa = PBXGroup;
+			children = (
+				5E8735811514972900AF6142 /* Creature.h */,
+				5E8735821514972E00AF6142 /* Creature.cpp */,
+				5E87357C151496B200AF6142 /* Player.h */,
+				5E87357E151496BA00AF6142 /* Player.cpp */,
+			);
+			name = Creatures;
+			sourceTree = "<group>";
+		};
 		5E443F131515EE5B00DC1027 /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,18 +163,13 @@
 		5E87358B1514A46200AF6142 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				5E1680931518A09F00372BAF /* Creatures */,
 				5E87358C1514A48600AF6142 /* Camera.h */,
 				5E87358D1514A48600AF6142 /* Camera.cpp */,
 				5E625ED81513E7EE0076984F /* Terrain.cpp */,
 				5E625ED91513E7EE0076984F /* Terrain.h */,
-				5E87357C151496B200AF6142 /* Player.h */,
-				5EA391D51514FD8900143E3F /* DynBox.cpp */,
-				5EA391D61514FD8900143E3F /* DynBox.h */,
-				5E3F1DA915164F5F00557798 /* StatBox.cpp */,
-				5E3F1DAA15164F5F00557798 /* StatBox.h */,
-				5E8735811514972900AF6142 /* Creature.h */,
-				5E8735821514972E00AF6142 /* Creature.cpp */,
-				5E87357E151496BA00AF6142 /* Player.cpp */,
+				5EA391D51514FD8900143E3F /* PolyBox.cpp */,
+				5EA391D61514FD8900143E3F /* PolyBox.h */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -273,10 +276,9 @@
 				5E87358E1514A48600AF6142 /* Camera.cpp in Sources */,
 				5E8735931514A4A900AF6142 /* ControlHandler.cpp in Sources */,
 				5E8735961514A4B800AF6142 /* BaseGame.cpp in Sources */,
-				5EA391D71514FD8900143E3F /* DynBox.cpp in Sources */,
+				5EA391D71514FD8900143E3F /* PolyBox.cpp in Sources */,
 				5E443F191515EE6D00DC1027 /* Arrow.cpp in Sources */,
 				5E443F1A1515EE6D00DC1027 /* Gun.cpp in Sources */,
-				5E3F1DAB15164F5F00557798 /* StatBox.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
