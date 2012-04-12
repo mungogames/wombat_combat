@@ -1,8 +1,14 @@
-/* Rock.h
- *
- *  Created on: 17.03.2012
- *      Author: sk
- */
+/////////////////////////////////////////////
+/// @brief PolyBox class
+/// Creates a dynamic or static box, that can be defined by
+/// a Polygon via the edge points.
+///
+/// @author Simon K
+/// @author Simon J
+/// @date 03/17/2012 - 03/21/2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
 
 #ifndef wombatcombat_DynBox_h
 #define wombatcombat_DynBox_h

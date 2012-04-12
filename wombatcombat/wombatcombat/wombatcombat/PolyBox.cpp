@@ -1,10 +1,18 @@
-/*PolyBox.cpp
- *
- * 	Created on: 17.03.2012
- * 	Author:sk
- */
+/////////////////////////////////////////////
+/// @brief PolyBox class
+/// Creates a dynamic or static box, that can be defined by
+/// a Polygon via the edge points.
+///
+/// @author Simon K
+/// @author Simon J
+/// @date 03/17/2012 - 03/21/2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
 
 #include "PolyBox.h"
+#include "Helper.h"
+
 #include <iostream>
 #define pi 3.14159265
 using namespace std;
@@ -27,26 +35,30 @@ void PolyBox::Constructor(GameContainer *gc, int pointCount, float posX, float p
   //pointCount Konstruktor in lokale Variable legen
 	this->pointCount = pointCount;
   
-	//Definitionen für Box2D
+  vectorf pos = Helper::vector2f(posX, posY); // Vector2f object that contains values for sfml and box2d
+  
 	//Body Definition
 	this->bodyDef = new b2BodyDef();
 	this->bodyDef->type = type;
 	this->bodyDef->fixedRotation = false;
-	this->bodyDef->position.Set(posX, posY);
+  this->bodyDef->position = pos.box2d;
+  
 	//Create Body in World
 	this->body = gc->getWorld()->CreateBody(this->bodyDef);
-	//Fixture
+  
+	//Fixtures
 	this->chainVertices = new b2Vec2 [this->pointCount];
 	this->renderObj = new sf::ConvexShape(this->pointCount);
-	this->renderObj->setPosition(sf::Vector2f(posX, -posY));
+	this->renderObj->setPosition(pos.sfml);
 }
 
 
 
 void PolyBox::addPoint(int index, float x, float y)
 {
-	this->chainVertices[index].Set(x, y);
-	this->renderObj->setPoint(index, sf::Vector2f(x,-y));
+  vectorf pos = Helper::vector2f(x, y);
+	this->chainVertices[index] = pos.box2d;
+	this->renderObj->setPoint(index, pos.sfml);
 }
 
 
@@ -55,7 +67,7 @@ void PolyBox::generate()
 {
 	this->polygon = new b2PolygonShape();
 	this->polygon->Set(this->chainVertices, this->pointCount);
-	this->body->CreateFixture(this->polygon, 1.0);
+	this->body->CreateFixture(this->polygon, 1.5);
 }
 
 

@@ -38,7 +38,7 @@ Player::Player(GameContainer* gc, float posX, float feetPosY, float sizeX, float
   this->creatureData->name = "Gaylord";
   this->creatureData->hitboxSize = b2Vec2(sizeX, sizeY);
   
-  this->weapon = new Gun(this->creatureData, this->body, 10, 10);
+  this->weapon = new Gun(gc, this->creatureData, this->body, 10, 0.6);
   
 }
 
@@ -142,9 +142,7 @@ void Player::update()
 {
   
   // Looking Direction BEGIN
-  if (gc->getMouseSide() == NONE)
-    this->creatureData->lookingDirection = this->creatureData->lookingDirection;
-  else
+  if (gc->getMouseSide() != NONE)
     this->creatureData->lookingDirection = gc->getMouseSide();
   // Looking Direction END
   
@@ -158,7 +156,7 @@ void Player::update()
   float speed;  
   if (!this->isOnGround() && vel.x == 0)
     speed = 0;
-  else if (this->running)
+  else/**/ if (this->running)
     speed = this->runningSpeed;
   else
     speed = this->movingSpeed;
@@ -179,7 +177,7 @@ void Player::update()
   
   // Update Render Position
   this->renderObj.setPosition(this->getPos().x, -this->getPos().y);
-  this->weapon->update(gc);
+  this->weapon->update();
 
 }
 
@@ -194,6 +192,6 @@ void Player::update()
 void Player::render()
 {
   gc->getWindow()->draw(renderObj);
-  this->weapon->render(this->gc);
+  this->weapon->render();
 }
 

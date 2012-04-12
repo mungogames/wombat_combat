@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "Creature.h"
+#include "Helper.h"
 
 /////////////////////////////////////////////
 /// @brief Constructor
@@ -28,11 +29,13 @@ Creature::Creature (GameContainer* gc, float posX, float feetPosY, float sizeX, 
   this->creatureData->name = "Creature";
   this->creatureData->hitboxSize = b2Vec2(sizeX, sizeY);
 
+  vectorf pos = Helper::vector2f(posX, feetPosY+sizeY/2); 
+  
   // Body Definition (Box2D)
   b2BodyDef bodyDef; // Generates a new body definition which contains values of the Body
   bodyDef.type = b2_dynamicBody; // Sets type of Body to Dynamic (can move / be moved)
   bodyDef.userData = this->creatureData;
-  bodyDef.position.Set(posX, feetPosY+sizeY/2);
+  bodyDef.position = pos.box2d;
   
   // Creates Body in the World (Box2D)
   this->body = gc->getWorld()->CreateBody(&bodyDef);
@@ -57,7 +60,7 @@ Creature::Creature (GameContainer* gc, float posX, float feetPosY, float sizeX, 
   
   // Sets the Render Object
   this->renderObj.setOrigin(sizeX/2, sizeY/2); // Sets Position to the center of the render object
-  this->renderObj.setPosition(posX, feetPosY-sizeY/2);
+  this->renderObj.setPosition(pos.sfml);
   this->renderObj.setSize(sf::Vector2f(sizeX, sizeY));
   this->renderObj.setFillColor(sf::Color::Red);
 }

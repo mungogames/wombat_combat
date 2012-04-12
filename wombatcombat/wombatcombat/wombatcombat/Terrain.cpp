@@ -6,18 +6,18 @@
 //
 
 #include "Terrain.h"
+#include "Helper.h"
 
 Terrain::Terrain (GameContainer* gc, int pointCount, float posX, float posY)
 {
   
   this->pointCount = pointCount;
   
-  // Ground Body
-  
+  vectorf pos = Helper::vector2f(posX, posY);
   
   // Body Definition (Box2D)
   this->bodyDef = new b2BodyDef(); // Generates a new body definition which contains values of the Body
-  this->bodyDef->position.Set(posX, posY);
+  this->bodyDef->position = pos.box2d;
   
   // Creates Body in the World (Box2D)
   this->body = gc->getWorld()->CreateBody(this->bodyDef);
@@ -30,8 +30,9 @@ Terrain::Terrain (GameContainer* gc, int pointCount, float posX, float posY)
 
 void Terrain::addPoint (int index, float x, float y)
 {
-  this->chainVertices[index].Set(x, y);
-  this->renderVertices[index] = sf::Vector2f(x, -y);
+  vectorf pos = Helper::vector2f(x, y);
+  this->chainVertices[index] = pos.box2d;
+  this->renderVertices[index] = pos.sfml;
 }
 
 void Terrain::generate ()

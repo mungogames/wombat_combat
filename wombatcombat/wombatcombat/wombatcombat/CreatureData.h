@@ -20,6 +20,8 @@ public:
   string name;
   b2Vec2 hitboxSize;
   Direction lookingDirection;
+  int health;
+  int power;
   
   CreatureData();
   

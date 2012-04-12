@@ -1,11 +1,3 @@
-//
-//  Arrow.h
-//  wombatcombat
-//
-//  Created by Simon Jentsch on 17.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
-//
-
 #ifndef wombatcombat_Arrow_h
 #define wombatcombat_Arrow_h
 
@@ -36,7 +28,7 @@ private:
   
   
 public:
-  Arrow(GameContainer* gc, int damage, b2Vec2 speed, b2Vec2 pos, Direction side);
+  Arrow(GameContainer* gc, int damage, float speed, b2Vec2 pos, double radiant);
   ~Arrow();
   
   b2Body* getBody();

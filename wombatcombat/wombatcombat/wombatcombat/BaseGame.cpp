@@ -1,10 +1,14 @@
-//
-//  GameLoop.cpp
-//  movement_cpp
-//
-//  Created by Simon Jentsch on 05.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
-//
+/////////////////////////////////////////////
+/// @brief Base Game Class
+/// Basic loop with an update and a render method to make the
+/// source code clearer
+/// 
+/// @author Simon J
+/// @author Simon K
+/// @date 03/05/2012 - 03/19/2012
+///
+/// @copyright Mungo Games
+/////////////////////////////////////////////
 
 #include "BaseGame.h"
 #include <iostream>

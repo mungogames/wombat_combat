@@ -23,6 +23,7 @@
 		5E8735931514A4A900AF6142 /* ControlHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735911514A4A900AF6142 /* ControlHandler.cpp */; };
 		5E8735961514A4B800AF6142 /* BaseGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5E8735941514A4B800AF6142 /* BaseGame.cpp */; };
 		5EA391D71514FD8900143E3F /* PolyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EA391D51514FD8900143E3F /* PolyBox.cpp */; };
+		5EFFE2CB1521D722001153EF /* Helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFE2CA1521D722001153EF /* Helper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5E625ED71513E7EE0076984F /* libBox2D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBox2D.a; sourceTree = "<group>"; };
 		5E625ED81513E7EE0076984F /* Terrain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Terrain.cpp; sourceTree = "<group>"; };
 		5E625ED91513E7EE0076984F /* Terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
+		5E854F94151C971100CCC1A5 /* BodyHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyHandler.h; sourceTree = "<group>"; };
 		5E87357C151496B200AF6142 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		5E87357E151496BA00AF6142 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		5E8735801514971600AF6142 /* enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enums.h; sourceTree = "<group>"; };
@@ -58,6 +60,9 @@
 		5E8735981514A50000AF6142 /* ContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListener.h; sourceTree = "<group>"; };
 		5EA391D51514FD8900143E3F /* PolyBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolyBox.cpp; sourceTree = "<group>"; };
 		5EA391D61514FD8900143E3F /* PolyBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolyBox.h; sourceTree = "<group>"; };
+		5EFFE2C71521D64D001153EF /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		5EFFE2C91521D684001153EF /* structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structs.h; sourceTree = "<group>"; };
+		5EFFE2CA1521D722001153EF /* Helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Helper.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +141,9 @@
 				5E625EBA1513E7BE0076984F /* main.cpp */,
 				5E625EC61513E7BE0076984F /* Supporting Files */,
 				5E8735801514971600AF6142 /* enums.h */,
+				5EFFE2C71521D64D001153EF /* Helper.h */,
+				5EFFE2CA1521D722001153EF /* Helper.cpp */,
+				5EFFE2C91521D684001153EF /* structs.h */,
 			);
 			path = wombatcombat;
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 			children = (
 				5E8735911514A4A900AF6142 /* ControlHandler.cpp */,
 				5E8735921514A4A900AF6142 /* ControlHandler.h */,
+				5E854F94151C971100CCC1A5 /* BodyHandler.h */,
 			);
 			name = Handlers;
 			sourceTree = "<group>";
@@ -279,6 +288,7 @@
 				5EA391D71514FD8900143E3F /* PolyBox.cpp in Sources */,
 				5E443F191515EE6D00DC1027 /* Arrow.cpp in Sources */,
 				5E443F1A1515EE6D00DC1027 /* Gun.cpp in Sources */,
+				5EFFE2CB1521D722001153EF /* Helper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

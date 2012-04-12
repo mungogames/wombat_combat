@@ -1,11 +1,3 @@
-//
-//  Bow.h
-//  wombatcombat
-//
-//  Created by Simon Jentsch on 17.03.12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
-//
-
 #ifndef wombatcombat_Gun_h
 #define wombatcombat_Gun_h
 
@@ -22,14 +14,20 @@ class Gun
 {
   
 private:
+  GameContainer* gc;
   CreatureData* creatureData;
   b2Body* playerBody;
   
   int attackPower;
   float shootSpeed;
+  
+  
+  int anglePrefix;
+  float radiant;
     
   b2Vec2 gunSize;
   float weaponOffset;
+  b2Vec2 arrowEmitter;
   
   b2PolygonShape* bowShape;
   
@@ -42,12 +40,12 @@ private:
   
   
 public:
-  Gun (CreatureData* creatureData, b2Body* playerBody, int attackPower, float shootSpeed);
+  Gun (GameContainer* gc, CreatureData* creatureData, b2Body* playerBody, int attackPower, float shootSpeed);
   
   void attack();
   
-  void update(GameContainer* gc);
-  void render(GameContainer* gc);
+  void update();
+  void render();
 };
 
 #endif
